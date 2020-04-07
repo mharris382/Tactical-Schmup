@@ -6146,7 +6146,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 528070459}
-  m_LocalRotation: {x: 0.000000047683717, y: -7.2350795e-17, z: 0.0000000015173061,
+  m_LocalRotation: {x: 0.000000047683717, y: -9.04648e-17, z: 0.0000000018971842,
     w: 1}
   m_LocalPosition: {x: 24.470001, y: -1.2199993, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -6376,6 +6376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 5
   _arrivalDistance: 1
+  _aimStopDegrees: 3
   _stoppingDistance: 2
 --- !u!50 &666055506
 Rigidbody2D:
@@ -7005,6 +7006,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 5
   _arrivalDistance: 1
+  _aimStopDegrees: 3
   _stoppingDistance: 2
 --- !u!114 &973890181
 MonoBehaviour:
@@ -17962,7 +17964,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1817285948}
-  m_LocalRotation: {x: 0.000000047683717, y: -7.2350795e-17, z: 0.0000000015173061,
+  m_LocalRotation: {x: 0.000000047683717, y: -9.04648e-17, z: 0.0000000018971842,
     w: 1}
   m_LocalPosition: {x: -4.9210052, y: -8.092636, z: -9.6334915}
   m_LocalScale: {x: 1, y: 1, z: 1}

@@ -34,22 +34,49 @@ public class MoveShipToMousePosition : MonoBehaviour
         var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = ship.transform.position.z;
 
+        //set move destination, or select another ship
         if (Input.GetMouseButtonDown(0))
         {
             if (CheckForSelectedShip(mousePos)) return;
 
-            ship.Target = mousePos;
+            ship.MoveTarget = mousePos;
         }
-        
         else if (Input.GetMouseButton(0))
         {
-            ship.Target = mousePos;
+            ship.MoveTarget = mousePos;
         }
 
+        //pause time
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Time.timeScale = Math.Abs(Time.timeScale) < 1 ? 1 : 0;
         }
+
+        //set look position / refactor this into enemy targetting
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (CheckForEnemyToTarget(mousePos)) return;
+
+            ship.LookTarget = mousePos; //refactor this into an enemy, perhaps interface
+        }
+        else if (Input.GetMouseButton(1))
+        {
+            ship.LookTarget = mousePos; //refactor this into an enemy, perhaps interface
+        }
+
+    }
+
+    private bool CheckForEnemyToTarget(Vector3 mousePos)
+    {
+        var colliders = Physics2D.OverlapCircleAll(mousePos, selectShipCastRadius);
+        var c = colliders.FirstOrDefault(t => shipColliders.ContainsKey(t));
+        if (c != null)
+        {
+            //if the ship is an enemy, set as the target and update ui
+            return false; //update this to return true when targetting
+        }
+
+        return false;
     }
 
     private bool CheckForSelectedShip(Vector3 mousePos)
