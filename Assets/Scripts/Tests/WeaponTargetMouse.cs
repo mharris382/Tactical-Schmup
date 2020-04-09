@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class WeaponAutoTargeter : MonoBehaviour
+public class WeaponTargetMouse : MonoBehaviour
 {
     [SerializeField] private WeaponController[] _controllers;
    
