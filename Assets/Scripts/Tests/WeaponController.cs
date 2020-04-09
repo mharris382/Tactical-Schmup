@@ -67,8 +67,15 @@ public class WeaponController : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawRay(transform.position, CenterAngle.normalized * _maxRange);
-        
-        
+        var angle = ((_coneOfFire - 1) / 2f) * 360f;
+        var line =CenterAngle.normalized* _maxRange;
+        var pRotated = Quaternion.AngleAxis( angle /2, Vector3.forward) * line;
+        var nRotated = Quaternion.AngleAxis(-angle/2, Vector3.forward) * line;
+        var pos = transform.position;
+        Gizmos.DrawRay(pos, line);
+        Gizmos.DrawRay(pos, pRotated);
+        Gizmos.DrawRay(pos, nRotated);
+
+
     }
 }

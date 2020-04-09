@@ -36,12 +36,17 @@ public class RtsShip : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
         _shipRotation.Tick();
-        
+
+        //TODO: Move this to a movement handler
+        HandleShipMovement();
+    }
+
+    private void HandleShipMovement()
+    {
         if (faceMoveDirection)
             LookTarget = MoveTarget;
-        
+
         var distToTarget = Vector2.Distance(MoveTarget, transform.position);
         if (distToTarget < _arrivalDistance)
         {
@@ -59,7 +64,6 @@ public class RtsShip : MonoBehaviour
         dir.Normalize();
 
         _rigidbody2D.velocity = dir * speed;
-
     }
 
 

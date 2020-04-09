@@ -34,24 +34,16 @@ public class MoveShipToMousePosition : MonoBehaviour
         var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = ship.transform.position.z;
 
-        //set move destination, or select another ship
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (CheckForSelectedShip(mousePos)) return;
-
-            ship.MoveTarget = mousePos;
-        }
-        else if (Input.GetMouseButton(0))
-        {
-            ship.MoveTarget = mousePos;
-        }
+        if (CheckForMovement(mousePos)) return;
 
         //pause time
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Time.timeScale = Math.Abs(Time.timeScale) < 1 ? 1 : 0;
-        }
+        CheckForPauseToggle();
 
+        CheckForRotation(mousePos);
+    }
+
+    private void CheckForRotation(Vector3 mousePos)
+    {
         //set look position / refactor this into enemy targetting
         if (Input.GetMouseButtonDown(1))
         {
@@ -63,17 +55,47 @@ public class MoveShipToMousePosition : MonoBehaviour
         {
             ship.LookTarget = mousePos; //refactor this into an enemy, perhaps interface
         }
+    }
 
+    private static void CheckForPauseToggle()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Time.timeScale = Math.Abs(Time.timeScale) < 1 ? 1 : 0;
+        }
+    }
+
+    private bool CheckForMovement(Vector3 mousePos)
+    {
+        //set move destination, or select another ship
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (CheckForSelectedShip(mousePos)) return true;
+
+            ship.MoveTarget = mousePos;
+        }
+        else if (Input.GetMouseButton(0))
+        {
+            ship.MoveTarget = mousePos;
+        }
+
+        return false;
     }
 
     private bool CheckForEnemyToTarget(Vector3 mousePos)
     {
         var colliders = Physics2D.OverlapCircleAll(mousePos, selectShipCastRadius);
         var c = colliders.FirstOrDefault(t => shipColliders.ContainsKey(t));
-        if (c != null)
+        if (c != null && shipColliders[c] != ship)
         {
+            
+            ship.gameObject.GetOrAddComponent<AutoLookAtTransform>().lookAt = c.transform;
             //if the ship is an enemy, set as the target and update ui
             return false; //update this to return true when targetting
+        }
+        else
+        {
+            ship.gameObject.GetOrAddComponent<AutoLookAtTransform>().lookAt = null;
         }
 
         return false;
