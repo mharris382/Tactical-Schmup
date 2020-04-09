@@ -71,3 +71,13 @@ public class MoveShipToMousePosition : MonoBehaviour
         return false;
     }
 }
+
+
+
+public class FireAtMouse : MonoBehaviour
+{
+    public WeaponController weapon;
+
+
+   
+}
