@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//TODO: Abstract this into a ship weapon base class or interface 
 public class ParticleWeapon : MonoBehaviour
 {
     [SerializeField] private int _damage = 1;

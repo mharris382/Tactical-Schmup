@@ -1,4 +1,6 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using Sirenix.OdinInspector;
 #if UNITY_EDITOR
 using Sirenix.OdinInspector.Editor;
@@ -49,7 +51,7 @@ public class WeaponController : MonoBehaviour
         var dir = _currTarget.position - transform.position;
         var dot = Vector2.Dot(CenterAngle, dir.normalized);
         
-        if (dot < _coneOfFire)
+        if (IsTargetOutsideAngle(_currTarget))
         {
             _firing = false;
             weaponTransform.AimDirection = CenterAngle;
@@ -72,6 +74,22 @@ public class WeaponController : MonoBehaviour
             weaponTransform.StopFiring();
         }
     }
+
+    private bool IsTargetOutsideAngle(Transform target)
+    {
+        var dir = target.position - transform.position;
+        var dot = Vector2.Dot(CenterAngle, dir.normalized);
+        return dot < _coneOfFire;
+    }
+
+
+    public List<Collider2D> FindAllTargets()
+    {
+        var colls = Physics2D.OverlapCircleAll(transform.position, _maxRange).ToList();
+        colls.RemoveAll(t => IsTargetOutsideAngle(t.transform));
+        return colls;
+    }
+    
 #if UNITY_EDITOR
 
     private void OnDrawGizmos()
