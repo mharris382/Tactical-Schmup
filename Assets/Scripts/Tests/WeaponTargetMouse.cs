@@ -16,7 +16,7 @@ public class WeaponTargetMouse : MonoBehaviour
     private void Update()
     {
         MoveTargetPointToMousePosition();
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(2))
         {
             foreach (var _controller in _controllers)
             {
@@ -24,7 +24,7 @@ public class WeaponTargetMouse : MonoBehaviour
                 _controller.FireAtTarget(_targetPoint);
             }
         }
-        else if (Input.GetMouseButtonUp(1))
+        else if (Input.GetMouseButtonUp(2))
         {
             foreach (var _controller in _controllers)
             {

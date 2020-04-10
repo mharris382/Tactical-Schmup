@@ -2,33 +2,31 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
+using UnityEngine;
 #if UNITY_EDITOR
 using Sirenix.OdinInspector.Editor;
 using UnityEditor;
 #endif
-using UnityEngine;
-using UnityEngine.XR;
 
 public class WeaponController : MonoBehaviour
 {
-    
-    [SerializeField] private float _maxRange = 5;
     [SerializeField] private float _coneOfFire = .5f;
-
-    
-
-    public float ConeOfFire => _coneOfFire;
-
-    [InlineEditor()]
-    public ParticleWeapon weaponTransform;
 
     private Transform _currTarget;
     private bool _firing;
 
+    [SerializeField] private float _maxRange = 5;
+
+    [InlineEditor]
+    public ParticleWeapon weaponTransform;
+
+
+    public float ConeOfFire => _coneOfFire;
+
     public Vector3 CenterAngle
     {
-        get{return  transform.up;}
-        set { transform.up = value; }
+        get => transform.up;
+        set => transform.up = value;
     }
 
     public void FireAtTarget(Transform target)
@@ -89,7 +87,9 @@ public class WeaponController : MonoBehaviour
         colls.RemoveAll(t => IsTargetOutsideAngle(t.transform));
         return colls;
     }
-    
+
+    #region [EDITOR]
+
 #if UNITY_EDITOR
 
     private void OnDrawGizmos()
@@ -109,7 +109,12 @@ public class WeaponController : MonoBehaviour
 
     }
 #endif
+
+    #endregion
 }
+
+//TODO: Move this to a new file inside an editor asmdef
+#region [CUSTOM EDITOR]
 
 #if UNITY_EDITOR
 
@@ -163,3 +168,5 @@ public class WeaponControllerEditor : OdinEditor
     }
 }
 #endif
+
+#endregion

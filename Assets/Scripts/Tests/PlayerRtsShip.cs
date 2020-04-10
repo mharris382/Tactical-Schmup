@@ -2,11 +2,14 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerRtsShip))]
+[RequireComponent(typeof(RtsShip))]
 public class PlayerRtsShip : MonoBehaviour
 {
     [Required]
     [SerializeField] private GameObject selection = null;
+    
+    
+    
     public bool IsSelected
     {
         set
@@ -14,7 +17,6 @@ public class PlayerRtsShip : MonoBehaviour
             selection.gameObject.SetActive(value);
         }
     }
-    
-    
+
     
 }

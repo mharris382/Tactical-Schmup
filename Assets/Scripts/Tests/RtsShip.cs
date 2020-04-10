@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class RtsShip : MonoBehaviour
+
+public class RtsShip : MonoBehaviour, IRtsShip
 {
 
     [SerializeField] private float _moveSpeed = 5;
