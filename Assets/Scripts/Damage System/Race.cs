@@ -1,0 +1,1 @@
+﻿public enum Race { none, human, teleri, convert }

@@ -1,0 +1,1 @@
+﻿public enum ModType { none, shield, armor, weapon, support }
