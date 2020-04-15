@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 8516e22f6bffe5e46b29ce5b8608d2cf
+guid: 54876834c184fc6499c264a84badb97f
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: spaceCraft6_8anglesMat
-    second: {fileID: 2100000, guid: 30d688437a080a846b681defd9e5b6cc, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0
