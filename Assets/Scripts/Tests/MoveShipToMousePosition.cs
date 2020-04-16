@@ -72,14 +72,27 @@ public class MoveShipToMousePosition : MonoBehaviour
         {
             if (CheckForSelectedShip(mousePos)) return true;
 
-            ship.MoveTarget = mousePos;
+            MoveShipToMouse(mousePos);
         }
         else if (Input.GetMouseButton(0))
         {
-            ship.MoveTarget = mousePos;
+            MoveShipToMouse(mousePos);
         }
 
         return false;
+    }
+
+    private void MoveShipToMouse(Vector3 mousePos)
+    {
+        ship.MoveTarget = GetMouseWorldPosition();
+    }
+
+    private Vector3 GetMouseWorldPosition()
+    {
+        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        Physics.Raycast(ray, out hit, 1000, 1 << 11);
+        return hit.point;
     }
 
     private bool CheckForEnemyToTarget(Vector3 mousePos)
