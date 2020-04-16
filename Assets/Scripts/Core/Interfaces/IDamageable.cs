@@ -6,6 +6,10 @@ using System;
 
 public interface IDamageable
 {
-    void TakeDamage(int amount);
-    event Action OnDeath;
+    void TakeDamage(DamageInfo damage);
 }
+
+
+
+
+

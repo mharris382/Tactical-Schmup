@@ -6,6 +6,7 @@ using UnityEngine;
 //TODO: Abstract this into a ship weapon base class or interface 
 public class ParticleWeapon : MonoBehaviour
 {
+    [SerializeField] private DamageType _damageType;
     [SerializeField] private int _damage = 1;
     private ParticleSystem _particleSystem;
     public bool _crazyFire = true;
@@ -19,7 +20,11 @@ public class ParticleWeapon : MonoBehaviour
        var damageable = other.GetComponent<IDamageable>();
        if (damageable != null)
        {
-           damageable.TakeDamage(_damage);
+           damageable.TakeDamage(new DamageInfo()
+           {
+               amount = this._damage,
+               type =  this._damageType
+           });
        }
     }
 
