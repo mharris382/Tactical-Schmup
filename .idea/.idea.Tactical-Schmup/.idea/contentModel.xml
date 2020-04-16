@@ -6,10 +6,6 @@
     <e p="D:\Unity Projects\Tactical Schmup\Tactical-Schmup" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="FixedRotation.cs" t="Include" />
-        <e p="MoveShipToMousePosition.cs" t="Include" />
-        <e p="ParticleWeapon.cs" t="Include" />
-        <e p="PlayerRtsShip.cs" t="Include" />
         <e p="Plugins" t="Include">
           <e p="Sirenix" t="Include">
             <e p="Odin Inspector" t="Include">
@@ -33,7 +29,6 @@
             </e>
           </e>
         </e>
-        <e p="RtsShip.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="Core" t="Include">
             <e p="AudioEvents" t="Include">
@@ -46,6 +41,7 @@
             <e p="Game.Core.asmdef" t="Include" />
             <e p="GameManager.cs" t="Include" />
             <e p="Interfaces" t="Include">
+              <e p="DamageType.cs" t="Include" />
               <e p="IDamageable.cs" t="Include" />
               <e p="IState.cs" t="Include" />
             </e>
@@ -63,18 +59,48 @@
               <e p="StateTransition.cs" t="Include" />
             </e>
           </e>
+          <e p="Damage System" t="Include">
+            <e p="Mod.cs" t="Include" />
+            <e p="ModType.cs" t="Include" />
+            <e p="ProtectiveMod.cs" t="Include" />
+            <e p="Race.cs" t="Include" />
+            <e p="ShipHealth.cs" t="Include" />
+            <e p="TestingDamage.cs" t="Include" />
+          </e>
+          <e p="Enemies" t="Include">
+            <e p="Game.Enemies.asmdef" t="Include" />
+            <e p="StupidEnemy.cs" t="Include" />
+          </e>
           <e p="Ships" t="Include">
+            <e p="Defenses" t="Include">
+              <e p="ShipDamageHandler.cs" t="Include" />
+            </e>
             <e p="Game.Ships.asmdef" t="Include" />
+            <e p="IRtsShip.cs" t="Include" />
+            <e p="RtsShip.cs" t="Include" />
             <e p="Ship.cs" t="Include" />
             <e p="ThrusterParticles.cs" t="Include" />
+            <e p="Weapons" t="Include">
+              <e p="AutoFireSensor.cs" t="Include" />
+              <e p="ParticleWeapon.cs" t="Include" />
+              <e p="WeaponController.cs" t="Include" />
+            </e>
           </e>
           <e p="SimpleCameraController.cs" t="Include" />
+          <e p="Tests" t="Include">
+            <e p="AutoLookAtTransform.cs" t="Include" />
+            <e p="FixedRotation.cs" t="Include" />
+            <e p="Game.Testing.asmdef" t="Include" />
+            <e p="MoveShipToMousePosition.cs" t="Include" />
+            <e p="PlayerRtsShip.cs" t="Include" />
+            <e p="WeaponTargetMouse.cs" t="Include" />
+          </e>
         </e>
-        <e p="WeaponAutoTargeter.cs" t="Include" />
-        <e p="WeaponController.cs" t="Include" />
       </e>
       <e p="Game.Core.csproj" t="IncludeRecursive" />
+      <e p="Game.Enemies.csproj" t="IncludeRecursive" />
       <e p="Game.Ships.csproj" t="IncludeRecursive" />
+      <e p="Game.Testing.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
       <e p="Sirenix.OdinInspector.CompatibilityLayer.csproj" t="IncludeRecursive" />
