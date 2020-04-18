@@ -4,7 +4,7 @@ using System.Linq;
 using Sirenix.Utilities;
 using UnityEngine;
 
-public class MoveShipToMousePosition : MonoBehaviour
+public class MoveShipToMousePosition_2D : MonoBehaviour
 {
     public float selectShipCastRadius = 1;
     public RtsShip ship;
@@ -47,7 +47,7 @@ public class MoveShipToMousePosition : MonoBehaviour
         //set look position / refactor this into enemy targetting
         if (Input.GetMouseButtonDown(1))
         {
-            if (CheckForEnemyToTarget(mousePos)) return;
+            if (CheckForEnemyToTarget_2D(mousePos)) return;
 
             ship.LookTarget = mousePos; //refactor this into an enemy, perhaps interface
         }
@@ -70,10 +70,10 @@ public class MoveShipToMousePosition : MonoBehaviour
         //set move destination, or select another ship
         if (Input.GetMouseButtonDown(0))
         {
-            if (CheckForSelectedShip(mousePos)) return true;
+            if (CheckForSelectedShip_2D(mousePos)) return true;
 
             MoveShipToMouse(mousePos);
-        }
+        } 
         else if (Input.GetMouseButton(0))
         {
             MoveShipToMouse(mousePos);
@@ -84,18 +84,16 @@ public class MoveShipToMousePosition : MonoBehaviour
 
     private void MoveShipToMouse(Vector3 mousePos)
     {
-        ship.MoveTarget = GetMouseWorldPosition();
+        ship.MoveTarget = mousePos;
     }
 
-    private Vector3 GetMouseWorldPosition()
+    private Vector3 GetMouseWorldPosition_2D()
     {
-        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        Physics.Raycast(ray, out hit, 1000, 1 << 11);
-        return hit.point;
+        return Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
-    private bool CheckForEnemyToTarget(Vector3 mousePos)
+
+    private bool CheckForEnemyToTarget_2D(Vector3 mousePos)
     {
         var colliders = Physics2D.OverlapCircleAll(mousePos, selectShipCastRadius);
         var c = colliders.FirstOrDefault(t => shipColliders.ContainsKey(t));
@@ -114,7 +112,7 @@ public class MoveShipToMousePosition : MonoBehaviour
         return false;
     }
 
-    private bool CheckForSelectedShip(Vector3 mousePos)
+    private bool CheckForSelectedShip_2D(Vector3 mousePos)
     {
         var colliders = Physics2D.OverlapCircleAll(mousePos, selectShipCastRadius);
         var c = colliders.FirstOrDefault(t => shipColliders.ContainsKey(t));
@@ -132,14 +130,4 @@ public class MoveShipToMousePosition : MonoBehaviour
 
         return false;
     }
-}
-
-
-
-public class FireAtMouse : MonoBehaviour
-{
-    public WeaponController weapon;
-
-
-   
 }

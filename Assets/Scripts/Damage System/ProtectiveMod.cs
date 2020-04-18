@@ -1,12 +1,16 @@
 ﻿
+using System;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class ProtectiveMod : Mod
 {
-    public int kineticAbsorb;
-    public int laserAbsorb;
-    public int plasmaAbsorb;
-    public int explosiveAbsorb;
+   [BoxGroup("Absorb Amounts")] public int kineticAbsorb;
+   [BoxGroup("Absorb Amounts")] public int laserAbsorb;
+   [BoxGroup("Absorb Amounts")] public int plasmaAbsorb;
+   [BoxGroup("Absorb Amounts")] public int explosiveAbsorb;
+   [BoxGroup("Absorb Amounts")] public int emotionalAbsorb;
+    
     public int totalDefenceHitPoints;
     public int currentDefenceHitPoints;
     public int rechargeRate;
@@ -22,6 +26,34 @@ public class ProtectiveMod : Mod
     public int ProcessDamage(DamageType damageType, int damage)
     {
         int remainingDamage = damage;
+        int absorbAmount = 0;
+        switch (damageType)
+        {
+            case DamageType.none:
+                break;
+            case DamageType.kinetic:
+                absorbAmount = kineticAbsorb;
+                break;
+            case DamageType.explosive:
+                absorbAmount = explosiveAbsorb;
+                break;
+            case DamageType.laser:
+                absorbAmount = laserAbsorb;
+                break;
+            case DamageType.plasma:
+                absorbAmount = plasmaAbsorb;
+                break;
+            case DamageType.emotional:
+                absorbAmount = emotionalAbsorb;
+                break;
+            default:
+                throw new ArgumentOutOfRangeException(nameof(damageType), damageType, null);
+        }
+
+        var damageAbsorbed = Mathf.Min(currentDefenceHitPoints, absorbAmount);
+        remainingDamage -= damageAbsorbed;
+        currentDefenceHitPoints -= damageAbsorbed;
+        return remainingDamage;
         if (damageType == DamageType.kinetic)
         {
             remainingDamage -= kineticAbsorb;

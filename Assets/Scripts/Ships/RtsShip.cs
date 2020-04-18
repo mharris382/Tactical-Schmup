@@ -15,8 +15,8 @@ public class RtsShip : MonoBehaviour, IRtsShip
     [MinValue("_arrivalDistance"), SerializeField] 
     private float _stoppingDistance = 2;
 
-    [Min(0), SerializeField] private float _aimStopDegrees = 3;
-    public bool faceMoveDirection;
+    
+    
 
 
     [SerializeField] private ShipRotationHandler _shipRotation;
@@ -45,8 +45,6 @@ public class RtsShip : MonoBehaviour, IRtsShip
 
     private void HandleShipMovement()
     {
-        if (faceMoveDirection)
-            LookTarget = MoveTarget;
 
         var distToTarget = Vector2.Distance(MoveTarget, transform.position);
         if (distToTarget < _arrivalDistance)
@@ -76,25 +74,7 @@ public class RtsShip : MonoBehaviour, IRtsShip
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, _stoppingDistance);
     }
-}
-
-[Serializable]
-public class ShipRotationHandler
-{
-    public Vector3 worldUp = Vector3.up;
-    public float _rotationSpeed = 10;
-    [HideInInspector]
-    public RtsShip ship;
-
-    public  void Tick()
-    {
-        var lookTarget = ship.LookTarget - ship.transform.position;
-        lookTarget.Normalize();
-        var transform = ship.transform;
-
-        var angle = Vector3.SignedAngle(worldUp, lookTarget, Vector3.forward);
-        var targetRot = Quaternion.Euler(new Vector3(0, 0, angle));
-        ship.transform.rotation = Quaternion.Slerp(ship.transform.rotation, targetRot, Time.fixedDeltaTime * _rotationSpeed);
-        // ship.transform.rotation = ;
-    }
+    
+    
+    
 }

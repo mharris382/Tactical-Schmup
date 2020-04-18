@@ -221,6 +221,67 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 110.16, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &67880729
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 67880730}
+  - component: {fileID: 67880731}
+  - component: {fileID: 67880732}
+  m_Layer: 0
+  m_Name: Player Ships
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &67880730
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67880729}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &67880731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67880729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 225e27dbd6ef4559867053c4b5aa99cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerControlledShips:
+  - {fileID: 666055508}
+  - {fileID: 973890181}
+--- !u!114 &67880732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67880729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e5f81bc97e0cda4bb2add1857ebf772, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectShipCastRadius: 1
+  ship: {fileID: 973890181}
 --- !u!1 &114412787
 GameObject:
   m_ObjectHideFlags: 0
@@ -6390,7 +6451,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 6.825
   m_Depth: -1
   m_CullingMask:
@@ -6616,13 +6677,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 604770812}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.4, y: -9.6, z: -10.8}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -15.991007, y: -16.472637, z: -10.433492}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 17923536}
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 1389163198}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &609958393
 GameObject:
@@ -6705,8 +6766,6 @@ MonoBehaviour:
   _moveSpeed: 5
   _arrivalDistance: 1
   _stoppingDistance: 2
-  _aimStopDegrees: 3
-  faceMoveDirection: 1
   _shipRotation:
     worldUp: {x: 0, y: 1, z: 0}
     _rotationSpeed: 10
@@ -6989,8 +7048,6 @@ MonoBehaviour:
   _moveSpeed: 5
   _arrivalDistance: 1.23
   _stoppingDistance: 3.34
-  _aimStopDegrees: 0.96
-  faceMoveDirection: 0
   _shipRotation:
     worldUp: {x: 0, y: 1, z: 0}
     _rotationSpeed: 10
@@ -7483,8 +7540,6 @@ MonoBehaviour:
   _moveSpeed: 5
   _arrivalDistance: 1
   _stoppingDistance: 2
-  _aimStopDegrees: 3
-  faceMoveDirection: 1
   _shipRotation:
     worldUp: {x: 0, y: 1, z: 0}
     _rotationSpeed: 10
@@ -17888,6 +17943,7 @@ Transform:
   - {fileID: 1371614033}
   - {fileID: 1817285950}
   - {fileID: 267565268}
+  - {fileID: 604770814}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17903,13 +17959,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fd6d2b1c63e4ef3882ca91e32d538e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectShipCastRadius: 1
-  ship: {fileID: 973890180}
-  allShips:
-  - {fileID: 863855885}
-  - {fileID: 666055505}
-  - {fileID: 973890180}
-  - {fileID: 1528731371}
 --- !u!1 &1406731602
 GameObject:
   m_ObjectHideFlags: 0
@@ -18152,8 +18201,6 @@ MonoBehaviour:
   _moveSpeed: 5
   _arrivalDistance: 1.23
   _stoppingDistance: 3.34
-  _aimStopDegrees: 0.96
-  faceMoveDirection: 0
   _shipRotation:
     worldUp: {x: 0, y: 1, z: 0}
     _rotationSpeed: 10
@@ -18577,8 +18624,6 @@ MonoBehaviour:
   _moveSpeed: 15
   _arrivalDistance: 0.65
   _stoppingDistance: 2
-  _aimStopDegrees: 3.21
-  faceMoveDirection: 0
   _shipRotation:
     worldUp: {x: 0, y: 1, z: 0}
     _rotationSpeed: 10
@@ -33530,7 +33575,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1817285948}
-  m_LocalRotation: {x: 1.0166056e-10, y: 0.01303278, z: 0.00000000779971, w: 0.9999151}
+  m_LocalRotation: {x: -0.000000005238595, y: 0.0000000036105776, z: 0.000000005500985,
+    w: 1}
   m_LocalPosition: {x: -15.661007, y: -16.712637, z: -9.6334915}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

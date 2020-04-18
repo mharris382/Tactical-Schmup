@@ -1,4 +1,4 @@
-﻿public enum DamageType { none, kinetic, explosive, laser, plasma, emotional }
+public enum DamageType { none, kinetic, explosive, laser, plasma, emotional }
 
 public struct DamageInfo
 {
