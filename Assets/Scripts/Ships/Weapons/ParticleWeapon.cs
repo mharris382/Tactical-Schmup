@@ -14,7 +14,9 @@ public class ParticleWeapon : MonoBehaviour
     {
         set { transform.up = value; }
     }
-    
+
+    public DamageType DamageType => _damageType;
+
     private void OnParticleCollision(GameObject other)
     {
        var damageable = other.GetComponent<IDamageable>();
