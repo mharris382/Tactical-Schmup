@@ -2,6 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 using UnityEngine;
 
 
@@ -66,15 +69,17 @@ public class RtsShip : MonoBehaviour, IRtsShip
     }
 
 
+#if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, _arrivalDistance);
+        Handles.color = Color.red.WithAlpha(0.25f);
+        Handles.DrawWireDisc(transform.position, Vector3.forward, _arrivalDistance);
 
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, _stoppingDistance);
+        Handles.color = Color.yellow.WithAlpha(0.25f);
+        Handles.DrawWireDisc(transform.position, Vector3.forward, _stoppingDistance);
     }
     
+#endif
     
     
 }
