@@ -1,0 +1,20 @@
+{
+    "name": "Game.Ships.Editor",
+    "references": [
+        "GUID:9924c1e34df52a245b356067ab171b4e",
+        "GUID:cf39644f290bcec459f095b147e2ce71"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "UNITY_EDITOR"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

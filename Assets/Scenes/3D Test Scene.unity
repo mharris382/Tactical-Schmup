@@ -298,6 +298,93 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 72985834}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &132297922
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7453877557368826780}
+    m_Modifications:
+    - target: {fileID: 8534747428730397441, guid: ab998da63b0da6541a0bc1954306c853,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8534747428730397441, guid: ab998da63b0da6541a0bc1954306c853,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8534747428730397441, guid: ab998da63b0da6541a0bc1954306c853,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8534747428730397441, guid: ab998da63b0da6541a0bc1954306c853,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8534747428730397441, guid: ab998da63b0da6541a0bc1954306c853,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8534747428730397441, guid: ab998da63b0da6541a0bc1954306c853,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8534747428730397441, guid: ab998da63b0da6541a0bc1954306c853,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8534747428730397441, guid: ab998da63b0da6541a0bc1954306c853,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8534747428730397441, guid: ab998da63b0da6541a0bc1954306c853,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8534747428730397441, guid: ab998da63b0da6541a0bc1954306c853,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8534747428730397441, guid: ab998da63b0da6541a0bc1954306c853,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8534747428730397446, guid: ab998da63b0da6541a0bc1954306c853,
+        type: 3}
+      propertyPath: m_Name
+      value: Laser Blaster Burst
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ab998da63b0da6541a0bc1954306c853, type: 3}
+--- !u!4 &132297923 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8534747428730397441, guid: ab998da63b0da6541a0bc1954306c853,
+    type: 3}
+  m_PrefabInstance: {fileID: 132297922}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &132297924 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8534747428730397440, guid: ab998da63b0da6541a0bc1954306c853,
+    type: 3}
+  m_PrefabInstance: {fileID: 132297922}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef5aec437a15bca468f5ac107b57d2d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &228908741
 GameObject:
   m_ObjectHideFlags: 3
@@ -390,6 +477,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &274221044 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8534747428730397441, guid: ab998da63b0da6541a0bc1954306c853,
+    type: 3}
+  m_PrefabInstance: {fileID: 8534747429004584181}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &274221045 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8534747428730397440, guid: ab998da63b0da6541a0bc1954306c853,
+    type: 3}
+  m_PrefabInstance: {fileID: 8534747429004584181}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef5aec437a15bca468f5ac107b57d2d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &354562411
@@ -558,7 +663,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1790549972}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &445603982
 BoxCollider2D:
@@ -826,7 +931,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 754551682}
   m_LocalRotation: {x: -0.70710605, y: -2.4281092e-14, z: 0.000000018105844, w: 0.70710754}
-  m_LocalPosition: {x: 14.695, y: 12.05, z: 0}
+  m_LocalPosition: {x: 20.595, y: 12.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 965332684}
@@ -859,7 +964,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 783802406}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 11.8, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1876809175}
@@ -868,6 +973,7 @@ Transform:
   - {fileID: 1396413849}
   - {fileID: 1727791478}
   - {fileID: 840879592}
+  - {fileID: 1490975136}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1072,7 +1178,7 @@ GameObject:
   - component: {fileID: 840879592}
   - component: {fileID: 840879593}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Box Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1105,7 +1211,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.1809709, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1116,7 +1222,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10, y: 18}
+  m_Size: {x: 5.294762, y: 18}
   m_EdgeRadius: 0
 --- !u!1 &865042580
 GameObject:
@@ -1262,12 +1368,12 @@ PrefabInstance:
     - target: {fileID: 7453877556200530596, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
         type: 3}
       propertyPath: _maxRange
-      value: 31.171562
+      value: 34.31074
       objectReference: {fileID: 0}
     - target: {fileID: 7453877556200530596, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
         type: 3}
       propertyPath: _coneOfFire
-      value: 0.735362
+      value: 0.65329593
       objectReference: {fileID: 0}
     - target: {fileID: 7453877556200530597, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
         type: 3}
@@ -1342,6 +1448,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 902378644}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &902378646 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7453877556200530602, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
+    type: 3}
+  m_PrefabInstance: {fileID: 902378644}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &902378647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902378646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dca313583ac538845bd97ecdba18a739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensor:
+    sensor: {fileID: 1490975135}
 --- !u!1001 &907193889
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1352,12 +1478,12 @@ PrefabInstance:
     - target: {fileID: 7453877556200530596, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
         type: 3}
       propertyPath: _maxRange
-      value: 31.171562
+      value: 34.31074
       objectReference: {fileID: 0}
     - target: {fileID: 7453877556200530596, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
         type: 3}
       propertyPath: _coneOfFire
-      value: 0.735362
+      value: 0.65329593
       objectReference: {fileID: 0}
     - target: {fileID: 7453877556200530597, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
         type: 3}
@@ -1432,6 +1558,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 907193889}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &907193891 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7453877556200530602, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
+    type: 3}
+  m_PrefabInstance: {fileID: 907193889}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &907193892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907193891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dca313583ac538845bd97ecdba18a739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensor:
+    sensor: {fileID: 1490975135}
 --- !u!1 &965332683
 GameObject:
   m_ObjectHideFlags: 0
@@ -1834,96 +1980,20 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1175625480}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1185892665
-PrefabInstance:
+--- !u!114 &1185892668
+MonoBehaviour:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2033758044}
-    m_Modifications:
-    - target: {fileID: 7453877556200530596, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
-        type: 3}
-      propertyPath: _maxRange
-      value: 31.171562
-      objectReference: {fileID: 0}
-    - target: {fileID: 7453877556200530596, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
-        type: 3}
-      propertyPath: _coneOfFire
-      value: 0.735362
-      objectReference: {fileID: 0}
-    - target: {fileID: 7453877556200530597, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.700001
-      objectReference: {fileID: 0}
-    - target: {fileID: 7453877556200530597, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.3899994
-      objectReference: {fileID: 0}
-    - target: {fileID: 7453877556200530597, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7453877556200530597, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7453877556200530597, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7453877556200530597, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.7071045
-      objectReference: {fileID: 0}
-    - target: {fileID: 7453877556200530597, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071091
-      objectReference: {fileID: 0}
-    - target: {fileID: 7453877556200530597, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7453877556200530597, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7453877556200530597, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7453877556200530597, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -90.00001
-      objectReference: {fileID: 0}
-    - target: {fileID: 7453877556200530602, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
-        type: 3}
-      propertyPath: m_Name
-      value: Laser Burst Gun (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7453877556480669916, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
-        type: 3}
-      propertyPath: _damageType
-      value: 4
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 29bc8bc4d347dca4b9f20c8220d07b33, type: 3}
---- !u!4 &1185892666 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7453877556200530597, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
-    type: 3}
-  m_PrefabInstance: {fileID: 1185892665}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7453877557368826771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dca313583ac538845bd97ecdba18a739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensor:
+    sensor: {fileID: 1490975135}
 --- !u!1 &1396413848
 GameObject:
   m_ObjectHideFlags: 0
@@ -6756,96 +6826,80 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _defenseConfig: {fileID: 11400000, guid: 9e3bef57be2d7bd448bf0365523c900e, type: 2}
   layerPriority: 2
---- !u!1001 &1576598913
-PrefabInstance:
+--- !u!1 &1490975135
+GameObject:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2033758044}
-    m_Modifications:
-    - target: {fileID: 7453877556200530596, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
-        type: 3}
-      propertyPath: _maxRange
-      value: 31.171562
-      objectReference: {fileID: 0}
-    - target: {fileID: 7453877556200530596, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
-        type: 3}
-      propertyPath: _coneOfFire
-      value: 0.735362
-      objectReference: {fileID: 0}
-    - target: {fileID: 7453877556200530597, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.700001
-      objectReference: {fileID: 0}
-    - target: {fileID: 7453877556200530597, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -4.9000015
-      objectReference: {fileID: 0}
-    - target: {fileID: 7453877556200530597, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7453877556200530597, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7453877556200530597, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7453877556200530597, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.7071045
-      objectReference: {fileID: 0}
-    - target: {fileID: 7453877556200530597, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071091
-      objectReference: {fileID: 0}
-    - target: {fileID: 7453877556200530597, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7453877556200530597, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7453877556200530597, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7453877556200530597, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -90.00001
-      objectReference: {fileID: 0}
-    - target: {fileID: 7453877556200530602, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
-        type: 3}
-      propertyPath: m_Name
-      value: Laser Burst Gun (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7453877556480669916, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
-        type: 3}
-      propertyPath: _damageType
-      value: 4
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 29bc8bc4d347dca4b9f20c8220d07b33, type: 3}
---- !u!4 &1576598914 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7453877556200530597, guid: 29bc8bc4d347dca4b9f20c8220d07b33,
-    type: 3}
-  m_PrefabInstance: {fileID: 1576598913}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1490975136}
+  - component: {fileID: 1490975137}
+  - component: {fileID: 1490975138}
+  m_Layer: 0
+  m_Name: Target Trigger Sensor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1490975136
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490975135}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 783802407}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1490975137
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490975135}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 38.22
+--- !u!114 &1490975138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490975135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4edb69e4262b4694a8668f629abba3cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1576598916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7453877557758140203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dca313583ac538845bd97ecdba18a739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensor:
+    sensor: {fileID: 1490975135}
 --- !u!1 &1604059745
 GameObject:
   m_ObjectHideFlags: 0
@@ -7000,7 +7054,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1637268485}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.695, y: 12.05, z: -93.728676}
+  m_LocalPosition: {x: 20.595, y: 12.05, z: -93.728676}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 647718772}
@@ -12108,9 +12162,9 @@ Transform:
   m_LocalPosition: {x: 29.39, y: 24.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 442871433}
   - {fileID: 445603981}
   - {fileID: 1854646953}
+  - {fileID: 442871433}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12213,7 +12267,7 @@ Transform:
   - {fileID: 826672802}
   - {fileID: 1401639528}
   m_Father: {fileID: 1790549972}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1876809174
 PrefabInstance:
@@ -17091,8 +17145,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1185892666}
-  - {fileID: 1576598914}
+  - {fileID: 7453877557368826780}
+  - {fileID: 7453877557758140196}
   m_Father: {fileID: 783802407}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17587,7 +17641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _coneOfFire: 0.74102116
-  _maxRange: 84.18991
+  _maxRange: 72.701935
   weaponTransform: {fileID: 7453877555773963013}
 --- !u!4 &7453877556962274676
 Transform:
@@ -17617,7 +17671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _coneOfFire: 0.74102116
-  _maxRange: 84.18991
+  _maxRange: 72.701935
   weaponTransform: {fileID: 1106389543}
 --- !u!1 &7453877556962274683
 GameObject:
@@ -17636,3 +17690,168 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &7453877557368826771
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7453877557368826780}
+  - component: {fileID: 7453877557368826781}
+  - component: {fileID: 1185892668}
+  m_Layer: 0
+  m_Name: Laser Burst Gun (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7453877557368826780
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7453877557368826771}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7071045, w: 0.7071091}
+  m_LocalPosition: {x: 4.700001, y: 1.3899994, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 132297923}
+  m_Father: {fileID: 2033758044}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90.00001}
+--- !u!114 &7453877557368826781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7453877557368826771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb7dfff751634e0ebb07dd4fb56ffe31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _coneOfFire: 0.65329593
+  _maxRange: 34.31074
+  weaponTransform: {fileID: 132297924}
+--- !u!4 &7453877557758140196
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7453877557758140203}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7071045, w: 0.7071091}
+  m_LocalPosition: {x: 4.700001, y: -4.9000015, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 274221044}
+  m_Father: {fileID: 2033758044}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90.00001}
+--- !u!114 &7453877557758140197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7453877557758140203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb7dfff751634e0ebb07dd4fb56ffe31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _coneOfFire: 0.65329593
+  _maxRange: 34.31074
+  weaponTransform: {fileID: 274221045}
+--- !u!1 &7453877557758140203
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7453877557758140196}
+  - component: {fileID: 7453877557758140197}
+  - component: {fileID: 1576598916}
+  m_Layer: 0
+  m_Name: Laser Burst Gun (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1001 &8534747429004584181
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7453877557758140196}
+    m_Modifications:
+    - target: {fileID: 8534747428730397441, guid: ab998da63b0da6541a0bc1954306c853,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8534747428730397441, guid: ab998da63b0da6541a0bc1954306c853,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8534747428730397441, guid: ab998da63b0da6541a0bc1954306c853,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8534747428730397441, guid: ab998da63b0da6541a0bc1954306c853,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8534747428730397441, guid: ab998da63b0da6541a0bc1954306c853,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8534747428730397441, guid: ab998da63b0da6541a0bc1954306c853,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8534747428730397441, guid: ab998da63b0da6541a0bc1954306c853,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8534747428730397441, guid: ab998da63b0da6541a0bc1954306c853,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8534747428730397441, guid: ab998da63b0da6541a0bc1954306c853,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8534747428730397441, guid: ab998da63b0da6541a0bc1954306c853,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8534747428730397441, guid: ab998da63b0da6541a0bc1954306c853,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8534747428730397446, guid: ab998da63b0da6541a0bc1954306c853,
+        type: 3}
+      propertyPath: m_Name
+      value: Laser Blaster Burst
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ab998da63b0da6541a0bc1954306c853, type: 3}

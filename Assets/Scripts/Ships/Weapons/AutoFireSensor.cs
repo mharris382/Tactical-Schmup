@@ -2,30 +2,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Ships.Weapons;
 using UnityEngine;
 
-public class AutoFireSensor : MonoBehaviour
+public class AutoFireSensor : AutoFireSensorBase
 {
-    private WeaponController _weaponController;
+    
+    public SensorOnGameObject sensor;
 
-
-    private void Awake()
+    protected override bool IsValidTarget(Collider2D collider2D)
     {
-        _weaponController = GetComponent<WeaponController>();
+        return true;
     }
 
-
-    private void Update()
+    protected override float GetTargetScore(Collider2D t)
     {
-        var targets = _weaponController.FindAllTargets();
-        var best = targets.OrderByDescending(t => Vector2.Dot(t.transform.position - transform.position, transform.up)).FirstOrDefault();
-        if (best != null)
-        {
-            _weaponController.FireAtTarget(best.transform);
-        }
-        else
-        {
-            _weaponController.StopFiring();
-        }
+        var transform1 = this.transform;
+
+        bool hasDamageable = t.GetComponentInParent<IDamageable>() != null;
+
+        return Vector2.Dot(t.transform.position - transform1.position, transform1.up)
+               + ((hasDamageable) ? 100 : 0);
+    }
+
+    public override ITargetSensor GetSensor()
+    {
+        return sensor;
     }
 }
