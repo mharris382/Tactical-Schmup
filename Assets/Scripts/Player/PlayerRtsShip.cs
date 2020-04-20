@@ -1,19 +1,21 @@
 ﻿using System;
+using System.Linq;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-[RequireComponent(typeof(RtsShip))]
+
 public class PlayerRtsShip : MonoBehaviour, IRtsShip
 {
     [Required]
     [SerializeField] private GameObject selection = null;
 
-    private RtsShip _rtsShip;
+    private IRtsShip _rtsShip;
     private bool _isSelected;
 
     public Vector3 LookTarget
     {
         set => _rtsShip.LookTarget = value;
+        get => _rtsShip.LookTarget;
     }
 
     public Vector3 MoveTarget
@@ -29,7 +31,7 @@ public class PlayerRtsShip : MonoBehaviour, IRtsShip
 
     private void Awake()
     {
-        this._rtsShip = GetComponent<RtsShip>();
+        this._rtsShip = GetComponents<IRtsShip>().FirstOrDefault(t => t != this);
     }
 
     private void SetSelected(bool value)

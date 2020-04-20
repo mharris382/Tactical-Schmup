@@ -41,7 +41,8 @@ namespace Ships.Weapons
 
         private void FireAtTarget(Collider2D best)
         {
-            _weaponController.FireAtTarget(best.transform);
+            Transform target = best.attachedRigidbody == null ? best.transform : best.attachedRigidbody.transform;
+            _weaponController.FireAtTarget(target);
         }
 
         protected abstract bool IsValidTarget(Collider2D collider2D);

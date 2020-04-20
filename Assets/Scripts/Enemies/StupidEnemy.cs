@@ -7,17 +7,19 @@ namespace Enemies
 {
     public  class StupidEnemy : MonoBehaviour
     {
-        [Required]
-        public RtsShip ship;
+        [Required, ValidateInput("valShipObject")]
+        public GameObject shipGameObject;
+
 
         public float engagementRange = 10;
         public Transform currentTarget;
+        private IRtsShip ship;
+        
 
-        public virtual Transform GetCurrentTarget()
+        private void Awake()
         {
-            return currentTarget;
+            ship = shipGameObject.GetComponent<IRtsShip>();
         }
-
 
         private void Update()
         {
@@ -44,5 +46,29 @@ namespace Enemies
                 ship.MoveTarget = ship.transform.position;
             }
         }
+
+
+        public virtual Transform GetCurrentTarget()
+        {
+            return currentTarget;
+        }
+
+        #region [Editor Helpers]
+
+#if UNITY_EDITOR
+        private bool valShipObject(GameObject go, ref string msg)
+        {
+            if (go == null)
+            {
+                msg = "Ship is required!";
+                return false;
+            }
+
+            msg = "Ship must have an IRtsShip component attached";
+            return go.GetComponent<IRtsShip>() != null;
+        }
+#endif
+
+        #endregion
     }
 }

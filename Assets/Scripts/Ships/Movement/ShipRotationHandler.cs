@@ -11,7 +11,7 @@ public class ShipRotationHandler
     public Vector3 worldUp = Vector3.up;
     public float _rotationSpeed = 10;
     [HideInInspector]
-    public RtsShip ship;
+    public IRtsShip ship;
 
     public  void Tick()
     {
@@ -24,4 +24,10 @@ public class ShipRotationHandler
         ship.transform.rotation = Quaternion.Slerp(ship.transform.rotation, targetRot, Time.fixedDeltaTime * _rotationSpeed);
         // ship.transform.rotation = ;
     }
+    
+    
+    
+    
+    
+
 }

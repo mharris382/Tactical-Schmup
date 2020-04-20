@@ -827,7 +827,7 @@ Transform:
   m_Children:
   - {fileID: 1727791478}
   m_Father: {fileID: 783802407}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &432637258
 PrefabInstance:
@@ -1370,7 +1370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _coneOfFire: 0.5715546
-  _maxRange: 42.959778
+  _maxRange: 43.935974
   weaponTransform: {fileID: 6937259774076213963}
 --- !u!1 &702938752
 GameObject:
@@ -1469,6 +1469,7 @@ GameObject:
   - component: {fileID: 783802410}
   - component: {fileID: 783802409}
   - component: {fileID: 783802408}
+  - component: {fileID: 783802411}
   m_Layer: 0
   m_Name: Human Cargo
   m_TagString: Untagged
@@ -1487,11 +1488,11 @@ Transform:
   m_LocalPosition: {x: 11.8, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1175625481}
   - {fileID: 840879592}
+  - {fileID: 1175625481}
   - {fileID: 1062420644}
-  - {fileID: 1263102392}
   - {fileID: 427715718}
+  - {fileID: 1263102392}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1526,7 +1527,6 @@ MonoBehaviour:
   _shipRotation:
     worldUp: {x: 0, y: 1, z: 0}
     _rotationSpeed: 10
-    ship: {fileID: 0}
 --- !u!50 &783802410
 Rigidbody2D:
   serializedVersion: 4
@@ -1548,6 +1548,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &783802411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783802406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93f04dc9c49493849bccd490df22e611, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defenseLayers:
+  - {fileID: 1263102394}
+  - {fileID: 1263102393}
+  maxHullHP: 100
 --- !u!1 &811423199
 GameObject:
   m_ObjectHideFlags: 0
@@ -1841,7 +1857,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 783802407}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &840879593
 BoxCollider2D:
@@ -2451,7 +2467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _coneOfFire: 0.5715546
-  _maxRange: 42.959778
+  _maxRange: 43.935974
   weaponTransform: {fileID: 402122405}
 --- !u!1001 &1175625480
 PrefabInstance:
@@ -2653,6 +2669,30 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1263102391}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1263102393 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4762545413250504859, guid: 6ae3583cabe5eff419b5a0a8ee487909,
+    type: 3}
+  m_PrefabInstance: {fileID: 1263102391}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b68e05d568624f4db3126cfb2cba007b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1263102394 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4762545411610840145, guid: 6ae3583cabe5eff419b5a0a8ee487909,
+    type: 3}
+  m_PrefabInstance: {fileID: 1263102391}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b68e05d568624f4db3126cfb2cba007b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1270916942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7614,7 +7654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _coneOfFire: 0.5
-  _maxRange: 45
+  _maxRange: 43.935974
   weaponTransform: {fileID: 281936552}
 --- !u!1 &1490975135
 GameObject:
@@ -7975,7 +8015,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _coneOfFire: 0.5163835
-  _maxRange: 45
+  _maxRange: 43.935974
   weaponTransform: {fileID: 6937259774529242651}
 --- !u!1 &1637268485
 GameObject:
@@ -13124,9 +13164,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1790549972}
   - component: {fileID: 1790549975}
-  - component: {fileID: 1790549974}
   - component: {fileID: 1790549973}
   - component: {fileID: 1790549976}
+  - component: {fileID: 1790549977}
   m_Layer: 0
   m_Name: Human Destroyer
   m_TagString: Untagged
@@ -13166,25 +13206,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selection: {fileID: 72985836}
---- !u!114 &1790549974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1790549971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 628cb79d0d8ca4e44954ea1696d45df8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _moveSpeed: 50
-  _arrivalDistance: 6.3
-  _stoppingDistance: 21.56
-  _shipRotation:
-    worldUp: {x: 0, y: 1, z: 0}
-    _rotationSpeed: 10
-    ship: {fileID: 0}
 --- !u!50 &1790549975
 Rigidbody2D:
   serializedVersion: 4
@@ -13222,6 +13243,24 @@ MonoBehaviour:
   - {fileID: 826672803}
   - {fileID: 1401639529}
   maxHullHP: 100
+--- !u!114 &1790549977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790549971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d263e53a560e4f0794b39ef7a29f5a52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultShipMovement:
+    _moveSpeed: 50
+    _arrivalDistance: 6.3
+    _stoppingDistance: 21.56
+  defaultShipRotation:
+    rotationSpeed: 10
 --- !u!1001 &1832029697
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18511,7 +18550,6 @@ MonoBehaviour:
   _shipRotation:
     worldUp: {x: 0, y: 1, z: 0}
     _rotationSpeed: 10
-    ship: {fileID: 0}
 --- !u!50 &60772260346017861
 Rigidbody2D:
   serializedVersion: 4
@@ -18544,6 +18582,7 @@ GameObject:
   - component: {fileID: 60772260346017883}
   - component: {fileID: 60772260346017861}
   - component: {fileID: 60772260346017860}
+  - component: {fileID: 60772260346017884}
   m_Layer: 0
   m_Name: Human Fighter
   m_TagString: Untagged
@@ -18569,6 +18608,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &60772260346017884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60772260346017882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93f04dc9c49493849bccd490df22e611, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defenseLayers:
+  - {fileID: 4762545413035596616}
+  - {fileID: 4762545411387445122}
+  maxHullHP: 100
 --- !u!1001 &519997700380346829
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19170,7 +19225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sensor:
-    sensor: {fileID: 0}
+    sensor: {fileID: 133021733}
 --- !u!4 &7453877556039016828
 Transform:
   m_ObjectHideFlags: 0
@@ -19262,7 +19317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sensor:
-    sensor: {fileID: 0}
+    sensor: {fileID: 133021733}
 --- !u!1 &7453877557368826771
 GameObject:
   m_ObjectHideFlags: 0

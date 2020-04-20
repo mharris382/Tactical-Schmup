@@ -29,6 +29,10 @@ public class RtsShip : MonoBehaviour, IRtsShip
     public Vector3 LookTarget { get; set; }
 
     private Rigidbody2D _rigidbody2D;
+    
+    
+    
+    
     private void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();

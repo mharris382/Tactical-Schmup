@@ -10,6 +10,6 @@ public interface IRtsShip
     #endregion
 
 
-    Vector3 LookTarget { set; }
+    Vector3 LookTarget { set; get; }
     Vector3 MoveTarget { set; }
 }
