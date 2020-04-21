@@ -97,7 +97,7 @@ public class WeaponController : MonoBehaviour
 
 #if UNITY_EDITOR
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Color color = Color.grey;
         if (weaponTransform != null)
