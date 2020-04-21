@@ -53,6 +53,7 @@
               <e p="PooledMonoBehaviour.cs" t="Include" />
               <e p="PooledParticle.cs" t="Include" />
             </e>
+            <e p="Singleton.cs" t="Include" />
             <e p="State" t="Include">
               <e p="EntityStateMachineBase.cs" t="Include" />
               <e p="StateMachine.cs" t="Include" />
@@ -71,35 +72,62 @@
             <e p="Game.Enemies.asmdef" t="Include" />
             <e p="StupidEnemy.cs" t="Include" />
           </e>
+          <e p="Player" t="Include">
+            <e p="Game.Player.asmdef" t="Include" />
+            <e p="PlayerRtsShip.cs" t="Include" />
+            <e p="PlayerShips.cs" t="Include" />
+            <e p="Prototype" t="Include">
+              <e p="AutoLookAtTransform.cs" t="Include" />
+              <e p="MoveShipToMouse_Ortho.cs" t="Include" />
+              <e p="MoveShipToMouse_Perspective.cs" t="Include" />
+              <e p="MoveShipToMouseBase.cs" t="Include" />
+            </e>
+          </e>
           <e p="Ships" t="Include">
             <e p="Defenses" t="Include">
+              <e p="DefenseConfig.cs" t="Include" />
+              <e p="DefenseLayer.cs" t="Include" />
+              <e p="IDefenseLayer.cs" t="Include" />
               <e p="ShipDamageHandler.cs" t="Include" />
+            </e>
+            <e p="Editor" t="Include">
+              <e p="Game.Ships.Editor.asmdef" t="Include" />
+              <e p="WeaponControllerEditor.cs" t="Include" />
             </e>
             <e p="Game.Ships.asmdef" t="Include" />
             <e p="IRtsShip.cs" t="Include" />
+            <e p="Movement" t="Include">
+              <e p="IShipMovement.cs" t="Include" />
+              <e p="IShipRotation.cs" t="Include" />
+              <e p="RtsShipController.cs" t="Include" />
+              <e p="ShipRotationHandler.cs" t="Include" />
+            </e>
             <e p="RtsShip.cs" t="Include" />
             <e p="Ship.cs" t="Include" />
             <e p="ThrusterParticles.cs" t="Include" />
             <e p="Weapons" t="Include">
               <e p="AutoFireSensor.cs" t="Include" />
+              <e p="AutoFireSensorBase.cs" t="Include" />
+              <e p="ITargetSensor.cs" t="Include" />
               <e p="ParticleWeapon.cs" t="Include" />
+              <e p="SensorOnGameObject.cs" t="Include" />
+              <e p="TriggerTargetSensor.cs" t="Include" />
               <e p="WeaponController.cs" t="Include" />
             </e>
           </e>
           <e p="SimpleCameraController.cs" t="Include" />
           <e p="Tests" t="Include">
-            <e p="AutoLookAtTransform.cs" t="Include" />
             <e p="FixedRotation.cs" t="Include" />
             <e p="Game.Testing.asmdef" t="Include" />
-            <e p="MoveShipToMousePosition.cs" t="Include" />
-            <e p="PlayerRtsShip.cs" t="Include" />
             <e p="WeaponTargetMouse.cs" t="Include" />
           </e>
         </e>
       </e>
       <e p="Game.Core.csproj" t="IncludeRecursive" />
       <e p="Game.Enemies.csproj" t="IncludeRecursive" />
+      <e p="Game.Player.csproj" t="IncludeRecursive" />
       <e p="Game.Ships.csproj" t="IncludeRecursive" />
+      <e p="Game.Ships.Editor.csproj" t="IncludeRecursive" />
       <e p="Game.Testing.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />

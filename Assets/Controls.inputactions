@@ -1,0 +1,52 @@
+{
+    "name": "Controls",
+    "maps": [
+        {
+            "name": "InGame",
+            "id": "3875cc60-f620-4b10-8064-a7877eea197d",
+            "actions": [
+                {
+                    "name": "Move Ship",
+                    "type": "Button",
+                    "id": "d4afaec7-9970-41b1-82f7-30fc2cf9951a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Select Ship",
+                    "type": "Button",
+                    "id": "796c6138-cc91-463e-9484-b5f6767ce2e1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "07cc74d3-2afd-4c50-9dfd-31da9fe15dd9",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move Ship",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ab21638a-5be7-4c6b-9ccb-004d78f76cd8",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select Ship",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
