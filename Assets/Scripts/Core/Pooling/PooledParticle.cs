@@ -1,5 +1,6 @@
 ﻿#region
 
+using System.Collections;
 using UnityEngine;
 
 #endregion
@@ -17,6 +18,26 @@ public class PooledParticle : PooledMonoBehaviour
     private void Awake()
     {
         _particleSystem = GetComponent<ParticleSystem>();
+    }
+
+
+    public void Play()
+    {
+        this.enabled = true;
+        
+        if (!ParticleSystem.isPlaying)
+            ParticleSystem.Play();
+        
+        StartCoroutine(disableOnComplete());
+    }
+
+
+    IEnumerator disableOnComplete()
+    {
+        yield return null;
+        while (ParticleSystem.IsAlive(true))
+            yield return null;
+        this.enabled = false;
     }
 
     void InitCollisionPlane()
