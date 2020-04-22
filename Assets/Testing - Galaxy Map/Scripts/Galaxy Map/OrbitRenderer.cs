@@ -6,11 +6,13 @@ public class OrbitRenderer : MonoBehaviour
     [Range(3, 36)] public int segments;
     public Ellipse ellipse;
 
+    private OrbitMotion orbitMotion;
     private LineRenderer lr;
 
     private void Awake()
     {
         lr = GetComponent<LineRenderer>();
+
         CalculateEllipse();
     }
 
@@ -21,7 +23,7 @@ public class OrbitRenderer : MonoBehaviour
         {
             float angle = ((float)i / (float)segments) * 360 * Mathf.Deg2Rad;
             Vector2 position2D = ellipse.Evaluate((float)i / (float)segments);
-            points[i] = new Vector3(position2D.x, position2D.y, 0f);
+            points[i] = new Vector3(position2D.x, 0f, position2D.y);
         }
         points[segments] = points[0];
 
