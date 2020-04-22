@@ -15,21 +15,6 @@ MonoBehaviour:
   healthTarget: {fileID: 4518064558862800935}
   fillBar: {fileID: 4942104460595516587}
   fillRange: 1
---- !u!114 &735762230334033679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4942104462355615273}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a9e1ca86b060114cba9c391d81394e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthTarget: {fileID: 4518064558295862497}
-  fillBar: {fileID: 4942104462355615275}
-  fillRange: 1
 --- !u!114 &502369445586057539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44,6 +29,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthTarget: {fileID: 0}
   fillBar: {fileID: 4942104461587471842}
+  fillRange: 1
+--- !u!114 &735762230334033679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4942104462355615273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a9e1ca86b060114cba9c391d81394e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthTarget: {fileID: 4518064558295862497}
+  fillBar: {fileID: 4942104462355615275}
   fillRange: 1
 --- !u!1001 &3059542545128843086
 PrefabInstance:
@@ -225,10 +225,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4762545411610840145, guid: 6ae3583cabe5eff419b5a0a8ee487909,
+        type: 3}
+      propertyPath: layerPriority
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4762545412227113050, guid: 6ae3583cabe5eff419b5a0a8ee487909,
         type: 3}
       propertyPath: m_Name
-      value: '[Defenses] (with UI)'
+      value: '[Defenses + UI]'
       objectReference: {fileID: 0}
     - target: {fileID: 4762545412227113051, guid: 6ae3583cabe5eff419b5a0a8ee487909,
         type: 3}

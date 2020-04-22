@@ -9,7 +9,7 @@ namespace Ships.Defenses
 {
     public class ShipDamageHandler : MonoBehaviour, IDamageable, IHealthLayer
     {
-        [Button]
+        [Button,PropertyOrder(-1)]
         void SearchChildren()
         {
             defenseLayers.Clear();
@@ -30,6 +30,11 @@ namespace Ships.Defenses
         
         private void Awake()
         {
+            if (defenseLayers.FindIndex(t => t == null) == -1)
+            {
+                defenseLayers.Clear();
+                SearchChildren();
+            }
             currentHullHP = new ObservedValue<float>(maxHullHP);
             currentHullHP.OnValueChanged += f => OnCurrentHPChanged?.Invoke(f);
         }
@@ -56,33 +61,5 @@ namespace Ships.Defenses
 
 
 
-    public class UiHealthIndicator : MonoBehaviour
-    {
-        [ValidateInput("valTarget")]
-        public GameObject healthTarget;
 
-        #region [Editor Helpers]
-
-        bool valTarget(GameObject go, ref string msg)
-        {
-            if (go == null)
-            {
-                msg = "Health Target is required!";
-                return false;
-            }
-
-            msg = "Health Target must have IHealthLayer component attached";
-            return go.GetComponent<IHealthLayer>()!=null;
-        }
-
-        #endregion
-
-
-        private IHealthLayer _health;
-
-        private void Awake()
-        {
-            _health = healthTarget.GetComponent<IHealthLayer>();
-        }
-    }
 }

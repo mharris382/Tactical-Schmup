@@ -14,7 +14,7 @@ namespace Ships.Movement
 
 
         [SerializeField] private ShipMovement defaultShipMovement;
-        [SerializeField] private ShipRotation defaultShipRotation;
+        [SerializeField] private ShipRotationHandler defaultShipRotation;
 
 
 
@@ -121,15 +121,15 @@ namespace Ships.Movement
         {
             [Range(0, 180)] public float rotationSpeed = 15;
 
-            public void HandleRotation(RtsShipController ship)
+            public void HandleRotation(RtsShipController shipController)
             {
                 
-                var lookTarget = ship.LookTarget - ship.transform.position;
+                var lookTarget = shipController.LookTarget - shipController.transform.position;
                 lookTarget.Normalize();
 
-                var angle = Vector3.SignedAngle(ship.transform.up, lookTarget, Vector3.forward);
+                var angle = Vector3.SignedAngle(shipController.transform.up, lookTarget, Vector3.forward);
                 var targetRot = Quaternion.Euler(new Vector3(0, 0, angle));
-                ship.transform.rotation = Quaternion.Slerp(ship.transform.rotation, targetRot,
+                shipController.transform.rotation = Quaternion.Slerp(shipController.transform.rotation, targetRot,
                     Time.fixedDeltaTime * rotationSpeed);
             }
         }
