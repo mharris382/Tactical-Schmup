@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7484476268937854640
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5755687615613808266, guid: 41d687faf56ff7a4bad9ee59554fc698,
+        type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755687615613808266, guid: 41d687faf56ff7a4bad9ee59554fc698,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 2.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755687615613808266, guid: 41d687faf56ff7a4bad9ee59554fc698,
+        type: 3}
+      propertyPath: UVModule.rowIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755687615613808266, guid: 41d687faf56ff7a4bad9ee59554fc698,
+        type: 3}
+      propertyPath: UVModule.tilesY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755687615613808266, guid: 41d687faf56ff7a4bad9ee59554fc698,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.5057541
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755687615613808266, guid: 41d687faf56ff7a4bad9ee59554fc698,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.48900002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755687615613808266, guid: 41d687faf56ff7a4bad9ee59554fc698,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755687615613808268, guid: 41d687faf56ff7a4bad9ee59554fc698,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 49.640274
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755687615613808268, guid: 41d687faf56ff7a4bad9ee59554fc698,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.059679
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755687615613808268, guid: 41d687faf56ff7a4bad9ee59554fc698,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755687615613808268, guid: 41d687faf56ff7a4bad9ee59554fc698,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755687615613808268, guid: 41d687faf56ff7a4bad9ee59554fc698,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755687615613808268, guid: 41d687faf56ff7a4bad9ee59554fc698,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755687615613808268, guid: 41d687faf56ff7a4bad9ee59554fc698,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755687615613808268, guid: 41d687faf56ff7a4bad9ee59554fc698,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755687615613808268, guid: 41d687faf56ff7a4bad9ee59554fc698,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755687615613808268, guid: 41d687faf56ff7a4bad9ee59554fc698,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755687615613808268, guid: 41d687faf56ff7a4bad9ee59554fc698,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755687615613808269, guid: 41d687faf56ff7a4bad9ee59554fc698,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: ef95fc3a52cc2ad4bbe9720fefa4c73b, type: 2}
+    - target: {fileID: 5755687615613808269, guid: 41d687faf56ff7a4bad9ee59554fc698,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ef95fc3a52cc2ad4bbe9720fefa4c73b, type: 2}
+    - target: {fileID: 5755687615613808271, guid: 41d687faf56ff7a4bad9ee59554fc698,
+        type: 3}
+      propertyPath: m_Name
+      value: Laser Impact PFX Smaller Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 41d687faf56ff7a4bad9ee59554fc698, type: 3}
