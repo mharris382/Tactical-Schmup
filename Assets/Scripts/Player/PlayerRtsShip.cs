@@ -32,6 +32,7 @@ public class PlayerRtsShip : MonoBehaviour, IRtsShip
     private void Awake()
     {
         this._rtsShip = GetComponents<IRtsShip>().FirstOrDefault(t => t != this);
+        Debug.Assert(_rtsShip != null, "Player Ship has no other IRtsShip component attached!", this);
     }
 
     private void SetSelected(bool value)

@@ -2,6 +2,6 @@
 {
     public interface IShipRotation
     {
-        void HandleRotation(RtsShipController ship);
+        void HandleRotation(RtsShipController shipController);
     }
 }
