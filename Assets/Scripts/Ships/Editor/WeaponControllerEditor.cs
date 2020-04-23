@@ -6,7 +6,7 @@ using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-[CustomEditor(typeof(WeaponController), true), CanEditMultipleObjects()]
+[CustomEditor(typeof(WeaponController)), CanEditMultipleObjects()]
 public class WeaponControllerEditor : OdinEditor
 {
     private float? queuedDistance;
@@ -14,7 +14,11 @@ public class WeaponControllerEditor : OdinEditor
     private void OnSceneGUI()
     {
         var wep = target as WeaponController;
-        if (wep == null) return;
+        if (wep == null)
+        {
+            Debug.LogError("Not a weapon!");
+            return;
+        }
         Transform transform = wep.transform;
         DrawHandles(new SerializedObject(target), wep, transform, 
             dot => UpdateAllAngles(dot),

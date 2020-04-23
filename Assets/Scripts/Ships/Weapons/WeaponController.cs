@@ -10,6 +10,7 @@ using UnityEditor;
 //TODO add an interface to abstract weapons
 public class WeaponController : MonoBehaviour
 {
+    [Range(-1,1)]
     [SerializeField] private float _coneOfFire = .5f;
 
     private Transform _currTarget;
