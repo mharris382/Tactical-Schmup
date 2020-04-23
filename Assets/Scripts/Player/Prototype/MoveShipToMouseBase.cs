@@ -11,6 +11,7 @@ public abstract class MoveShipToMouseBase : MonoBehaviour
 
 
     Dictionary<Collider2D, PlayerRtsShip> shipColliders = new Dictionary<Collider2D, PlayerRtsShip>();
+    private Vector2 mouseMovedPosition;
 
     private void Start()
     {
@@ -60,18 +61,23 @@ public abstract class MoveShipToMouseBase : MonoBehaviour
     private void CheckForRotation(Vector3 mousePos)
     {
         //set look position / refactor this into enemy targetting
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButton(1))
         {
-            if (CheckForEnemyToTarget_2D(mousePos)) return;
+            // //if (CheckForEnemyToTarget_2D(mousePos)) return;
+            // if ((ship != null) && Vector2.Distance(mousePos, mouseMovedPosition) >= 1)
+            // {
+            //     var lookDirection = (mouseMovedPosition - (Vector2)mousePos).normalized;
+            //     
+            //     ship.LookTarget = lookDirection ; //refactor this into an enemy, perhaps interface
+            // }
+            ship.LookTarget = mousePos;
+        }
 
-            if (ship != null)
-                ship.LookTarget = mousePos; //refactor this into an enemy, perhaps interface
-        }
-        else if (Input.GetMouseButton(1))
-        {
-            if (ship != null)
-                ship.LookTarget = mousePos; //refactor this into an enemy, perhaps interface
-        }
+        // else if (Input.GetMouseButton(1))
+        // {
+        //     if (ship != null)
+        //         ship.LookTarget = mousePos; //refactor this into an enemy, perhaps interface
+        // }
     }
 
     private bool CheckForEnemyToTarget_2D(Vector3 mousePos)
@@ -103,7 +109,7 @@ public abstract class MoveShipToMouseBase : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             if (CheckForSelectedShip_2D(mousePos)) return true;
-
+            mouseMovedPosition = mousePos;
             MoveShipToMouse(mousePos);
         }
         else if (Input.GetMouseButton(0))
