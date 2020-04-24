@@ -32,7 +32,8 @@ public class ShipRotationHandler :  IShipRotation
     public void HandleRotation(RtsShipController shipController)
     {
         ship = shipController;
-        if (ship.LookTarget != lastWorldTarget)
+        var autoLookTarget = shipController.GetComponent<AutoLookAtTransform>();
+        if (ship.LookTarget != lastWorldTarget || (autoLookTarget != null && autoLookTarget.lookAt != null))
         {
             localLookTarget = shipController.LookTarget - shipController.transform.position;
             lastWorldTarget = ship.LookTarget;

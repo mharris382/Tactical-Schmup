@@ -308,7 +308,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!4 &27963724
 Transform:
@@ -7154,6 +7154,7 @@ MonoBehaviour:
   selectShipCastRadius: 1
   ship: {fileID: 1631047846}
   enableClickToSelect: 0
+  enableClickToTargetEnemy: 1
   enablePauseTime: 0
   enemyLayers:
     serializedVersion: 2
@@ -27412,7 +27413,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!4 &1572573992
 Transform:
@@ -28033,7 +28034,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!4 &1631047848
 Transform:

@@ -9,6 +9,7 @@ public abstract class MoveShipToMouseBase : MonoBehaviour
     public float selectShipCastRadius = 1;
     public PlayerRtsShip ship;
     public bool enableClickToSelect = true;
+    public bool enableClickToTargetEnemy = true;
     public bool enablePauseTime = false;
     public LayerMask enemyLayers = 1 << 0;
     public LayerMask allyLayers = 1 << 0;
@@ -38,7 +39,11 @@ public abstract class MoveShipToMouseBase : MonoBehaviour
         var mousePos = GetMouseWorldPosition();
 
         if (WasShipSelected(mousePos)) return;
-
+        if (WasEnemyTargeted(mousePos))
+        {
+            Debug.Log("Enemy Targeted");
+            return;
+        }
 
         if (enablePauseTime)
             CheckForPauseToggle();//pause time
@@ -76,16 +81,19 @@ public abstract class MoveShipToMouseBase : MonoBehaviour
             PlayerShips.Instance.ShipSelection.MoveTarget = mousePos;
         }
     }
-
+    private bool WasEnemyTargeted(Vector3 mousePos)
+    {
+        return enableClickToTargetEnemy && Input.GetMouseButtonDown(1) && CheckForEnemyToTarget_2D(mousePos);
+    }
     private bool CheckForEnemyToTarget_2D(Vector3 mousePos)
     {
         var colliders = Physics2D.OverlapCircleAll(mousePos, selectShipCastRadius, enemyLayers);
-        var c = colliders.FirstOrDefault(t => shipColliders.ContainsKey(t));
-        if (c != null && shipColliders[c] != ship)
+        var c = colliders.FirstOrDefault(t => !shipColliders.ContainsKey(t) && t.attachedRigidbody != null && t.attachedRigidbody.GetComponent<IRtsShip>() != null);
+        if (c != null   )
         {
             foreach (var ship in PlayerShips.Instance.GetSelectedShips().Where(t => t.gameObject != null))
             {
-                ship.gameObject.GetOrAddComponent<AutoLookAtTransform>().lookAt = c.transform;
+                ship.gameObject.GetOrAddComponent<AutoLookAtTransform>().lookAt = c.attachedRigidbody.transform;
             }
             return false; //update this to return true when targetting
         }
