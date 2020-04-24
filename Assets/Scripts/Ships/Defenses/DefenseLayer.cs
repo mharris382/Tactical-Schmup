@@ -33,8 +33,8 @@ namespace Ships.Defenses
                 return;
             }
             var resistance = _defenseConfig.GetResistance(type);
-            if(currentHP.Value > 0)
-                Debug.Log($"Defenses {name} got hit with {remainingDamage}:{type} - AMOUNT RESISTED = {resistance}, HP = {currentHP.Value}");
+            if (currentHP.Value > 0) { }
+            //Debug.Log($"Defenses {name} got hit with {remainingDamage}:{type} - AMOUNT RESISTED = {resistance}, HP = {currentHP.Value}");
             else
                 return;
             if (remainingDamage >= resistance)
