@@ -24,7 +24,6 @@ public class WeaponController : MonoBehaviour
 
     [InlineEditor] public ParticleWeapon weaponTransform;
 
-    public Transform test;
     public float ConeOfFire => _coneOfFire;
 
     public float MaxRange => _maxRange;
@@ -125,6 +124,8 @@ public class WeaponController : MonoBehaviour
         lop.Add(pos .With(z:0));
         return lop;
     }
+    
+    
 
     #region [EDITOR]
     public float GetArcAngle() => Mathf.Acos(_coneOfFire) * Mathf.Rad2Deg;
@@ -137,10 +138,7 @@ public class WeaponController : MonoBehaviour
         {
             color = DamageTypeColors.GetColor(weaponTransform.DamageType);
         }
-        if(test != null)
-        {
-            Debug.Log($"Target is outside angle = {IsTargetOutsideAngle(test)}");
-        }
+
 
         Gizmos.color = color.WithAlpha(0.15f);
         Handles.color = color.WithAlpha(0.15f);
