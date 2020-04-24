@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class UiHealthCircle : MonoBehaviour
 {
-    [ValidateInput("valTarget")]
+    public bool isRoot = false;
+    [ValidateInput("valTarget"), HideIf("isRoot")]
     public GameObject healthTarget;
 
-   [Required] public Image fillBar;
-    [Range(0,1)]
+    [Required] public Image fillBar;
+    [Range(0, 1)]
     public float fillRange = 0.5f;
-    
+
     #region [Editor Helpers]
 
     bool valTarget(GameObject go, ref string msg)
@@ -23,7 +24,7 @@ public class UiHealthCircle : MonoBehaviour
         }
 
         msg = "Health Target must have IHealthLayer component attached";
-        return go.GetComponent<IHealthLayer>()!=null;
+        return go.GetComponent<IHealthLayer>() != null;
     }
 
     #endregion
@@ -33,7 +34,16 @@ public class UiHealthCircle : MonoBehaviour
 
     private void Awake()
     {
-        _health = healthTarget.GetComponent<IHealthLayer>();
+        if (isRoot)
+        {
+            _health = GetComponentInParent<IHealthLayer>();
+            Debug.Assert(_health != null, "No health layer in parent");
+        }
+        else
+        {
+            _health = healthTarget.GetComponent<IHealthLayer>();
+
+        }
         _health.OnCurrentHPChanged += HealthOnOnCurrentHPChanged;
         HealthOnOnCurrentHPChanged(_health.MaxHP);
     }

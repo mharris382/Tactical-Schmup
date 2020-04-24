@@ -7,7 +7,6 @@ using UnityEngine;
 public abstract class MoveShipToMouseBase : MonoBehaviour
 {
     public float selectShipCastRadius = 1;
-    public PlayerRtsShip ship;
     public bool enableClickToSelect = true;
     public bool enableClickToTargetEnemy = true;
     public bool enablePauseTime = false;
@@ -18,8 +17,6 @@ public abstract class MoveShipToMouseBase : MonoBehaviour
 
     private void Start()
     {
-        if (ship != null)
-            ship.IsSelected = true;
         Debug.Assert(PlayerShips.Instance != null, "<b>The PlayerShips Singleton is not present in scene!</b>");
         var allShips = PlayerShips.Instance.playerControlledShips;
         foreach (var rtsShip in allShips)
@@ -145,14 +142,14 @@ public abstract class MoveShipToMouseBase : MonoBehaviour
     {
         if (!Input.GetKey(KeyCode.LeftShift))
         {
-            foreach (var ship in PlayerShips.Instance.GetSelectedShips())
+            foreach (var sp in PlayerShips.Instance.GetSelectedShips())
             {
-                if (shipColliders[c] != ship)
-                    ship.IsSelected = false;
+                if (shipColliders[c] != sp)
+                    sp.IsSelected = false;
             }
         }
 
-        ship = shipColliders[c];
+       var ship = shipColliders[c];
         ship.IsSelected = true;
         return true;
     }
