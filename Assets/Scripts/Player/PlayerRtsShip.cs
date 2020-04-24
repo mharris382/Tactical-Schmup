@@ -2,12 +2,16 @@
 using System.Linq;
 using Sirenix.OdinInspector;
 using UnityEngine;
-
+using UnityEngine.Events;
 
 public class PlayerRtsShip : MonoBehaviour, IRtsShip
 {
     [Required]
     [SerializeField] private GameObject selection = null;
+
+
+    [FoldoutGroup("Selection Events")]public UnityEvent onShipSelected;
+    [FoldoutGroup("Selection Events")]public UnityEvent onShipDeselected;
 
     private IRtsShip _rtsShip;
     private  bool _isSelected;
@@ -37,7 +41,13 @@ public class PlayerRtsShip : MonoBehaviour, IRtsShip
 
     private void SetSelected(bool value)
     {
-        _isSelected = value;
-        selection.gameObject.SetActive(value);
+        if(_isSelected != value)
+        {
+            _isSelected = value;
+            selection.gameObject.SetActive(value);
+            if (_isSelected) onShipSelected?.Invoke();
+            else onShipDeselected?.Invoke();
+        }
+       
     }
 }
