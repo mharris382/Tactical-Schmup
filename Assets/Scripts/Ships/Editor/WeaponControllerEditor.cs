@@ -150,20 +150,20 @@ public class WeaponControllerEditor : OdinEditor
 
         float range = rangeProp.floatValue;
         float dot = coneProp.floatValue;
-        var angle = ((dot - 1) / 2f) * 360f;
+        var angle = Mathf.Acos(dot) * Mathf.Rad2Deg;// ((dot - 1) / 2f) * 360f;
         line = wep.CenterAngle.normalized * range;
-        var pRotated = Quaternion.AngleAxis(angle / 2, Vector3.forward) * line;
-        nRotated = Quaternion.AngleAxis(-angle / 2, Vector3.forward) * line;
+        var pRotated = Quaternion.AngleAxis(angle, Vector3.forward) * line;
+        nRotated = Quaternion.AngleAxis(-angle , Vector3.forward) * line;
         pos = transform.position;
 
 
         Handles.color = color;
         Handles.DrawLine(pos, pos + pRotated);
         Handles.DrawLine(pos, pos + nRotated);
-        Handles.DrawWireArc(pos, Vector3.forward, nRotated, angle, range);
+        Handles.DrawWireArc(pos, Vector3.forward, nRotated, angle*2, range);
         var prev = color;
         Handles.color = color.WithAlpha(0.125f);
-        Handles.DrawSolidArc(pos, Vector3.forward, nRotated, angle, range);
+        Handles.DrawSolidArc(pos, Vector3.forward, nRotated, angle*2, range);
         Handles.color = prev;
         return range;
     }
