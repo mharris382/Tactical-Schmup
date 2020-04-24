@@ -38,6 +38,7 @@
               <e p="RangedFloat.cs" t="Include" />
               <e p="SimpleAudioEvent.cs" t="Include" />
             </e>
+            <e p="ExtensionMethods.cs" t="Include" />
             <e p="Game.Core.asmdef" t="Include" />
             <e p="GameManager.cs" t="Include" />
             <e p="Interfaces" t="Include">
@@ -45,6 +46,7 @@
               <e p="IDamageable.cs" t="Include" />
               <e p="IState.cs" t="Include" />
             </e>
+            <e p="ObservedValue.cs" t="Include" />
             <e p="Pooling" t="Include">
               <e p="AudioManager.cs" t="Include" />
               <e p="LifeTime.cs" t="Include" />
@@ -88,7 +90,11 @@
               <e p="DefenseConfig.cs" t="Include" />
               <e p="DefenseLayer.cs" t="Include" />
               <e p="IDefenseLayer.cs" t="Include" />
+              <e p="IHealthLayer.cs" t="Include" />
+              <e p="LockRotation.cs" t="Include" />
               <e p="ShipDamageHandler.cs" t="Include" />
+              <e p="ShipDeathHandler.cs" t="Include" />
+              <e p="UiHealthCircle.cs" t="Include" />
             </e>
             <e p="Editor" t="Include">
               <e p="Game.Ships.Editor.asmdef" t="Include" />
@@ -103,6 +109,7 @@
               <e p="ShipRotationHandler.cs" t="Include" />
             </e>
             <e p="RtsShip.cs" t="Include" />
+            <e p="RtsShip3D.cs" t="Include" />
             <e p="Ship.cs" t="Include" />
             <e p="ThrusterParticles.cs" t="Include" />
             <e p="Weapons" t="Include">
@@ -112,6 +119,7 @@
               <e p="ParticleWeapon.cs" t="Include" />
               <e p="SensorOnGameObject.cs" t="Include" />
               <e p="TriggerTargetSensor.cs" t="Include" />
+              <e p="WeaponArcVisualizer.cs" t="Include" />
               <e p="WeaponController.cs" t="Include" />
             </e>
           </e>

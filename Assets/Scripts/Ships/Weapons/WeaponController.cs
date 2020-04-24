@@ -10,6 +10,10 @@ using UnityEditor;
 //TODO add an interface to abstract weapons
 public class WeaponController : MonoBehaviour
 {
+    [FoldoutGroup("Weapon Info")]
+    public string weaponName;
+    [FoldoutGroup("Weapon Info"),TextArea(2,8)]
+    public string description;
     [Range(-1,1)]
     [SerializeField] private float _coneOfFire = .5f;
 
@@ -92,6 +96,32 @@ public class WeaponController : MonoBehaviour
         var colls = Physics2D.OverlapCircleAll(transform.position, _maxRange).ToList();
         colls.RemoveAll(t => IsTargetOutsideAngle(t.transform));
         return colls;
+    }
+
+
+    public List<Vector3> GetArcPoints(int smoothness)
+    {
+        var lop = new List<Vector3>();
+
+        smoothness = Mathf.Clamp(1, 360, smoothness);
+        var angle = Mathf.Acos(_coneOfFire) * Mathf.Rad2Deg ;
+        var line = CenterAngle.normalized * _maxRange;
+        line = line.With(z: 0);
+        
+        var pos = transform.position;
+        
+        float curAng = -angle;
+        float increment = (angle * 2) / (float)smoothness;
+        
+        lop.Add(pos .With(z:0));
+        for (int i = 0; i < smoothness; i++)
+        {
+            var cur = Quaternion.AngleAxis(curAng, Vector3.forward) * line;
+            lop.Add(transform.position + cur.With(z:0));
+            curAng += increment;
+        }
+        lop.Add(pos .With(z:0));
+        return lop;
     }
 
     #region [EDITOR]
