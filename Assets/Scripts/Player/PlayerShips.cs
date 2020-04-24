@@ -8,8 +8,8 @@ using UnityEngine;
 public class PlayerShips : Singleton<PlayerShips>
 {
     public List<PlayerRtsShip> playerControlledShips;
-
-   
+    private PlayerShipSelection _selection;
+    public IRtsShip ShipSelection => _selection;
     
     private void Awake()
     {
@@ -19,9 +19,23 @@ public class PlayerShips : Singleton<PlayerShips>
             Debug.LogError("There are no player controlled ships in the scene! Add the PlayerRtsShip component to ships to make them player controlled");
             return;
         }
+        _selection = new PlayerShipSelection();
     }
-    
-    
+
+    private void Update()
+    {
+        for(int i = 0; i < playerControlledShips.Count; i++)
+        {
+            if(Input.GetKeyDown(KeyCode.Alpha1 + i))
+            {
+                DeselectAllShips();
+                playerControlledShips[i].IsSelected = true;
+                break;
+            }
+        }
+    }
+
+
     public void DeselectAllShips()
     {
         playerControlledShips.ForEach(t => t.IsSelected = false);
@@ -37,7 +51,40 @@ public class PlayerShips : Singleton<PlayerShips>
         return playerControlledShips.Where(t => t.IsSelected);
     }
 
-   
+    private class PlayerShipSelection : IRtsShip
+    {
+        public GameObject gameObject => Instance.GetFirstSelectedShip()?.gameObject;
+
+        public Transform transform => Instance.GetFirstSelectedShip()?.transform;
+
+        public Vector3 LookTarget
+        {
+            get
+            {
+                var ship = Instance.GetFirstSelectedShip();
+              return ship != null ? ship.LookTarget : Vector3.zero ;
+            }
+
+            set
+            {
+                foreach (var ship in Instance.GetSelectedShips())
+                {
+                    ship.LookTarget = value;
+                }
+            }
+        }
+
+        public Vector3 MoveTarget
+        {
+            set
+            {
+                foreach (var ship in Instance.GetSelectedShips())
+                {
+                    ship.MoveTarget = value;
+                }
+            }
+        }
+    }
 
     #region [Editor Helpers]
 
@@ -59,4 +106,6 @@ public class PlayerShips : Singleton<PlayerShips>
     }
 
     #endregion
+
+    
 }

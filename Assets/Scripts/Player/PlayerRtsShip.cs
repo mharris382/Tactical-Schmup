@@ -10,7 +10,7 @@ public class PlayerRtsShip : MonoBehaviour, IRtsShip
     [SerializeField] private GameObject selection = null;
 
     private IRtsShip _rtsShip;
-    private bool _isSelected;
+    private  bool _isSelected;
 
     public Vector3 LookTarget
     {
