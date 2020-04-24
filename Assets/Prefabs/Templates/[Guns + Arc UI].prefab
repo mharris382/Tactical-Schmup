@@ -992,6 +992,25 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 0
   m_Loop: 0
+--- !u!114 &8974962166914698602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030320386240842665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f8eaed0ed2b9704b940199a59f50583, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  note: 'Sensor is attached to this GameObject for ease of use when setting up weapons
+
+
+    Adjust
+    the size/shape of the sensor''s collider as necessary'
+  reference: {fileID: 2030320386240842668}
+  referenceNote: Sensor's Collider
 --- !u!114 &863775073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1082,6 +1101,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d79a455fd4e5b8447a17a5b2bae1dd99, type: 3}
+--- !u!1 &2030320386240842665 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7027566268427700004, guid: d79a455fd4e5b8447a17a5b2bae1dd99,
+    type: 3}
+  m_PrefabInstance: {fileID: 9055555689211497613}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &2030320386240842668 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7027566268427700001, guid: d79a455fd4e5b8447a17a5b2bae1dd99,
+    type: 3}
+  m_PrefabInstance: {fileID: 9055555689211497613}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2030320385314374449 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7027566269647671228, guid: d79a455fd4e5b8447a17a5b2bae1dd99,

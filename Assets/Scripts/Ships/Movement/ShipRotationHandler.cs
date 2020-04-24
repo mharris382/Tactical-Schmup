@@ -1,5 +1,6 @@
 ﻿using System;
 using Ships.Movement;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 
@@ -9,6 +10,7 @@ using UnityEngine;
 [Serializable]
 public class ShipRotationHandler :  IShipRotation
 {
+    [HideInInspector]
     public Vector3 worldUp = Vector3.up;
     public float _rotationSpeed = 10;
     [HideInInspector]

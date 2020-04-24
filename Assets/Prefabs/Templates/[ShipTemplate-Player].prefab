@@ -1,0 +1,372 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2803672818279379661
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2702807942556555226}
+  - component: {fileID: 9021367033955249010}
+  m_Layer: 15
+  m_Name: 'README: SELECTION USEAGE '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2702807942556555226
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2803672818279379661}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8694230146202085040}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9021367033955249010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2803672818279379661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f8eaed0ed2b9704b940199a59f50583, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  note: "Child any controller gameObjects to this object to quickly setup functionality
+    related to selecting/deselecting Player Ships (will be active only when ship
+    is selected)\n\nGood Use case for this would be Cinemachine virutal camera targeting
+    this ship \n\nAlternatively you can use the UnityEvents in the PlayerRtsShip
+    to attach selection functionality"
+  reference: {fileID: 7453913791841164750}
+  referenceNote: '<- PlayerRtsShip component '
+--- !u!1 &4499270364082117529
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 820606708848808378}
+  - component: {fileID: 4002964172326406808}
+  m_Layer: 15
+  m_Name: '[Selection]'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &820606708848808378
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4499270364082117529}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8694230146202085040}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4002964172326406808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4499270364082117529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f8eaed0ed2b9704b940199a59f50583, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  note: "Child any controller gameObjects to this object to quickly setup functionality
+    related to selecting/deselecting Player Ships (will be active only when ship
+    is selected)\n\nGood Use case for this would be Cinemachine virutal camera targeting
+    this ship \n\nAlternatively you can use the UnityEvents in the PlayerRtsShip
+    to attach selection functionality"
+  reference: {fileID: 8694230146202085054}
+  referenceNote: '<- to PlayerRtsShip component '
+--- !u!114 &-8348540809924143281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8694230146202085054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f8eaed0ed2b9704b940199a59f50583, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  note: "NOTE: For the PlayerRtsShip to function in a scene there must also be a
+    Player Controller (which is a singleton)\n\nFor your convience I've created a
+    Player Controller Template prefab as well.  Drop your all your ships and the
+    controller into the scene \n\n(remember to press the button in the controller's
+    inspector to update the list)"
+  reference: {fileID: 6140019962047844806, guid: 058e82de938218143983c507bd04a2d3,
+    type: 3}
+  referenceNote: <Player Controller Template
+--- !u!114 &7453913791841164750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8694230146202085054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb99255a85894e0795ba09b24cbab1ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selection: {fileID: 4499270364082117529}
+  onShipSelected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4340904427096313087}
+        m_MethodName: set_alpha
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onShipDeselected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4340904427096313087}
+        m_MethodName: set_alpha
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.73
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!1001 &8996112307722809830
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 319896566716105216, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 319896567206051405, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 319896568054974368, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 319896568202868929, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 319896568705079126, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 105.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 319896568705079126, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -46.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 319896568705079126, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 319896568705079126, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 319896568705079126, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 319896568705079126, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 319896568705079126, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 319896568705079126, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 319896568705079126, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 319896568705079126, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 319896568705079126, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 319896568705079128, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_Name
+      value: '[ShipTemplate-Player]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 319896568705079128, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 976526884149963851, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1755741509224645538, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1755741509271935494, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1755741509887789882, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435437414103815709, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3395466024523602253, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4234478749314750320, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4234478749872407478, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4234478749922704249, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676251441465265976, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676251442282593556, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676251442985698929, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676251443224450488, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676251443406184134, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5094984269803228301, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938762062124720227, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597773206122827499, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597773206122827499, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: m_Name
+      value: Human Destroyer Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 8718397895367118329, guid: eb5c58a5f8f111542b8ccff1d328436a,
+        type: 3}
+      propertyPath: referenceNote
+      value: 'Sensor''s Collider
+
+        (must be trigger)'
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eb5c58a5f8f111542b8ccff1d328436a, type: 3}
+--- !u!1 &8694230146202085054 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 319896568705079128, guid: eb5c58a5f8f111542b8ccff1d328436a,
+    type: 3}
+  m_PrefabInstance: {fileID: 8996112307722809830}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8694230146202085040 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 319896568705079126, guid: eb5c58a5f8f111542b8ccff1d328436a,
+    type: 3}
+  m_PrefabInstance: {fileID: 8996112307722809830}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &4340904427096313087 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 4676251442282593561, guid: eb5c58a5f8f111542b8ccff1d328436a,
+    type: 3}
+  m_PrefabInstance: {fileID: 8996112307722809830}
+  m_PrefabAsset: {fileID: 0}
