@@ -58,3 +58,5 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+#Odin Inspector Demos
+Assets/Plugins/Sirenix/Demos/*
