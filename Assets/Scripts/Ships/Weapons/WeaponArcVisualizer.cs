@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
 using Sirenix.Utilities;
@@ -19,6 +20,18 @@ public class WeaponArcVisualizer : MonoBehaviour
     private void Awake()
     {
         this._weapon = GetComponent<WeaponController>();
+    }
+
+    private void OnEnable()
+    {
+        if (left != null) left.enabled = true;
+        lr.enabled = true;
+    }
+
+    private void OnDisable()
+    {
+        if (left != null) left.enabled = false;
+        lr.enabled = false;
     }
 
     private void Update()

@@ -11,6 +11,7 @@ public class WeaponControllerEditor : OdinEditor
 {
     private float? queuedDistance;
     private float? queuedDot;
+
     private void OnSceneGUI()
     {
         var wep = target as WeaponController;
@@ -19,12 +20,14 @@ public class WeaponControllerEditor : OdinEditor
             Debug.LogError("Not a weapon!");
             return;
         }
+
+
         Transform transform = wep.transform;
-        DrawHandles(new SerializedObject(target), wep, transform, 
+        DrawHandles(new SerializedObject(target), wep, transform,
             dot => UpdateAllAngles(dot),
             distance => UpdateAllDistances(distance));
-        
     }
+
 
     protected override void OnEnable()
     {
@@ -38,9 +41,21 @@ public class WeaponControllerEditor : OdinEditor
         ClearQueuedChanges();
     }
 
+    private static Dictionary<WeaponController, CircleCollider2D> sensorColliders =
+        new Dictionary<WeaponController, CircleCollider2D>();
 
     public override void OnInspectorGUI()
     {
+        var wep = target as WeaponController;
+        var ship = wep.GetComponentInParent<IRtsShip>();
+        if (ship != null)
+        {
+            ValidateWeaponCollisionLayers(ship);
+        }
+
+        CheckIfWeaponHasSensor(wep);
+
+
         if (queuedDistance.HasValue)
         {
             UpdateAllDistances(queuedDistance.Value);
@@ -52,8 +67,50 @@ public class WeaponControllerEditor : OdinEditor
             UpdateAllAngles(queuedDot.Value);
             queuedDot = null;
         }
-        
+
         base.OnInspectorGUI();
+    }
+
+    private CircleCollider2D CheckIfWeaponHasSensor(WeaponController wep)
+    {
+        CircleCollider2D coll;
+        if (!sensorColliders.TryGetValue(wep, out coll))
+        {
+            var autoSensor = wep.GetComponent<AutoFireSensor>();
+            if (autoSensor == null) return null;
+            
+            var col = autoSensor.sensor.sensor.GetComponent<CircleCollider2D>();
+            if (col == null) return null;
+
+            sensorColliders.Add(wep, col);
+        }
+
+        return coll;
+    }
+
+    private static void ValidateWeaponCollisionLayers(IRtsShip ship)
+    {
+        bool shipInAllyLayer = ship.gameObject.layer == LayerMask.NameToLayer("Ally");
+        bool shipInEnemyLayer = ship.gameObject.layer == LayerMask.NameToLayer("Enemy");
+        var weaponParticles = ship.transform.GetComponentsInChildren<ParticleWeapon>();
+        if (shipInAllyLayer || shipInEnemyLayer)
+        {
+            var selfLayer = shipInAllyLayer ? Layers.AllyLayer : Layers.EnemyLayer;
+            var hasWeaponCollidingWithSelf = weaponParticles.FirstOrDefault(t =>
+                (t.GetComponent<ParticleSystem>().collision.collidesWith |
+                 selfLayer) !=
+                0) != null;
+            if (hasWeaponCollidingWithSelf && GUILayout.Button(
+                $"Fix Weapon Particles which hit self"))
+            {
+                foreach (var particle in weaponParticles)
+                {
+                    var particleSystem = particle.GetComponent<ParticleSystem>();
+                    var collisionModule = particleSystem.collision;
+                    collisionModule.collidesWith &= ~selfLayer;
+                }
+            }
+        }
     }
 
     private void ClearQueuedChanges()
@@ -65,11 +122,15 @@ public class WeaponControllerEditor : OdinEditor
     private void UpdateAllDistances(float distance)
     {
         var targets = Selection.transforms.Select(t => t.GetComponent<WeaponController>());
-        foreach (var target in targets.Select(t => new SerializedObject(t)))
+        foreach (var target in targets.Select(t => new Tuple<SerializedObject, CircleCollider2D>(new SerializedObject(t), CheckIfWeaponHasSensor(t))))
         {
-            var rangeProp = target.FindProperty("_maxRange");
+            var rangeProp = target.Item1.FindProperty("_maxRange");
             rangeProp.floatValue = distance;
-            target.ApplyModifiedProperties();
+            target.Item1.ApplyModifiedProperties();
+            if (target.Item2 != null && target.Item2.radius < rangeProp.floatValue)
+            {
+                target.Item2.radius = rangeProp.floatValue + 1;
+            }
         }
     }
 
@@ -150,20 +211,20 @@ public class WeaponControllerEditor : OdinEditor
 
         float range = rangeProp.floatValue;
         float dot = coneProp.floatValue;
-        var angle = Mathf.Acos(dot) * Mathf.Rad2Deg;// ((dot - 1) / 2f) * 360f;
+        var angle = Mathf.Acos(dot) * Mathf.Rad2Deg; // ((dot - 1) / 2f) * 360f;
         line = wep.CenterAngle.normalized * range;
         var pRotated = Quaternion.AngleAxis(angle, Vector3.forward) * line;
-        nRotated = Quaternion.AngleAxis(-angle , Vector3.forward) * line;
+        nRotated = Quaternion.AngleAxis(-angle, Vector3.forward) * line;
         pos = transform.position;
 
 
         Handles.color = color;
         Handles.DrawLine(pos, pos + pRotated);
         Handles.DrawLine(pos, pos + nRotated);
-        Handles.DrawWireArc(pos, Vector3.forward, nRotated, angle*2, range);
+        Handles.DrawWireArc(pos, Vector3.forward, nRotated, angle * 2, range);
         var prev = color;
         Handles.color = color.WithAlpha(0.125f);
-        Handles.DrawSolidArc(pos, Vector3.forward, nRotated, angle*2, range);
+        Handles.DrawSolidArc(pos, Vector3.forward, nRotated, angle * 2, range);
         Handles.color = prev;
         return range;
     }
@@ -202,4 +263,11 @@ public class WeaponControllerEditor : OdinEditor
         new Tuple<DamageType, Color>(DamageType.explosive,
             new Color(246f / 235f, 131f / 235f, 28f / 235f, 1)), //rgb(242,131,28)
     };
+
+
+    public static class Layers
+    {
+        public const int EnemyLayer = 1 << 16;
+        public const int AllyLayer = 1 << 15;
+    }
 }
