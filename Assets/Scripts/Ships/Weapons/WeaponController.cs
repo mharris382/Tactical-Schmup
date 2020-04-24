@@ -20,10 +20,10 @@ public class WeaponController : MonoBehaviour
 
     [InlineEditor] public ParticleWeapon weaponTransform;
 
-
+    public Transform test;
     public float ConeOfFire => _coneOfFire;
 
-    
+    public float MaxRange => _maxRange;
     public Vector3 CenterAngle
     {
         get => transform.up;
@@ -80,8 +80,10 @@ public class WeaponController : MonoBehaviour
     
     private bool IsTargetOutsideAngle(Transform target)
     {
-        var dir = target.position - transform.position;
-        var dot = Vector2.Dot(CenterAngle, dir.normalized);
+        var targetPos = target.position.With(z: 0);
+        var pos = transform.position.With(z: 0);
+        var dir = targetPos -pos;
+        var dot = Vector2.Dot(CenterAngle.normalized, dir.normalized);
         return dot < _coneOfFire;
     }
 
@@ -95,7 +97,7 @@ public class WeaponController : MonoBehaviour
     }
 
     #region [EDITOR]
-
+    public float GetArcAngle() => Mathf.Acos(_coneOfFire) * Mathf.Rad2Deg;
 #if UNITY_EDITOR
 
     private void OnDrawGizmosSelected()
@@ -105,16 +107,20 @@ public class WeaponController : MonoBehaviour
         {
             color = DamageTypeColors.GetColor(weaponTransform.DamageType);
         }
+        if(test != null)
+        {
+            Debug.Log($"Target is outside angle = {IsTargetOutsideAngle(test)}");
+        }
 
-        Gizmos.color = color.WithAlpha(0.35f);
-        Handles.color = color.WithAlpha(0.35f);
-        var angle = ((_coneOfFire - 1) / 2f) * 360f;
+        Gizmos.color = color.WithAlpha(0.15f);
+        Handles.color = color.WithAlpha(0.15f);
+        var angle = Mathf.Acos(_coneOfFire) * Mathf.Rad2Deg;
         var line = CenterAngle.normalized * _maxRange;
-        var pRotated = Quaternion.AngleAxis(angle / 2, Vector3.forward) * line;
-        var nRotated = Quaternion.AngleAxis(-angle / 2, Vector3.forward) * line;
+        var pRotated = Quaternion.AngleAxis(angle , Vector3.forward) * line;
+        var nRotated = Quaternion.AngleAxis(-angle, Vector3.forward) * line;
         var pos = transform.position;
         //   Gizmos.DrawRay(pos, line);
-        Handles.DrawWireArc(pos, Vector3.forward, nRotated, angle, _maxRange);
+        Handles.DrawWireArc(pos, Vector3.forward, nRotated, angle*2, _maxRange);
         Gizmos.DrawRay(pos, pRotated);
         Gizmos.DrawRay(pos, nRotated);
     }
@@ -122,7 +128,6 @@ public class WeaponController : MonoBehaviour
 
     #endregion
 }
-
 
 public static class DamageTypeColors
 {
