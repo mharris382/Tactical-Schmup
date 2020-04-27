@@ -105,7 +105,6 @@ GameObject:
   - component: {fileID: 6140019962047844805}
   - component: {fileID: 6140019962047844804}
   - component: {fileID: 6140019962047844806}
-  - component: {fileID: -7488237973280076147}
   m_Layer: 0
   m_Name: Player Controller Template
   m_TagString: Untagged
@@ -141,7 +140,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectShipCastRadius: 1
-  ship: {fileID: 0}
   enableClickToSelect: 1
   enableClickToTargetEnemy: 1
   enablePauseTime: 0
@@ -164,19 +162,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerControlledShips: []
---- !u!114 &-7488237973280076147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6140019962047844803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f8eaed0ed2b9704b940199a59f50583, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  note: Click the button above once your player ships are in the scene and it will
-    add them to the list of player ships
-  reference: {fileID: 0}
-  referenceNote: 
