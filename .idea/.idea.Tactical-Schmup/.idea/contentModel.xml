@@ -46,6 +46,7 @@
               <e p="IDamageable.cs" t="Include" />
               <e p="IState.cs" t="Include" />
             </e>
+            <e p="Layers.cs" t="Include" />
             <e p="ObservedValue.cs" t="Include" />
             <e p="Pooling" t="Include">
               <e p="AudioManager.cs" t="Include" />
@@ -60,6 +61,10 @@
               <e p="EntityStateMachineBase.cs" t="Include" />
               <e p="StateMachine.cs" t="Include" />
               <e p="StateTransition.cs" t="Include" />
+            </e>
+            <e p="Utilties" t="Include">
+              <e p="EditorNote.cs" t="Include" />
+              <e p="Game.Utilities.asmdef" t="Include" />
             </e>
           </e>
           <e p="Damage System" t="Include">
@@ -79,13 +84,13 @@
             <e p="PlayerRtsShip.cs" t="Include" />
             <e p="PlayerShips.cs" t="Include" />
             <e p="Prototype" t="Include">
-              <e p="AutoLookAtTransform.cs" t="Include" />
               <e p="MoveShipToMouse_Ortho.cs" t="Include" />
               <e p="MoveShipToMouse_Perspective.cs" t="Include" />
               <e p="MoveShipToMouseBase.cs" t="Include" />
             </e>
           </e>
           <e p="Ships" t="Include">
+            <e p="AutoLookAtTransform.cs" t="Include" />
             <e p="Defenses" t="Include">
               <e p="DefenseConfig.cs" t="Include" />
               <e p="DefenseLayer.cs" t="Include" />
@@ -137,6 +142,7 @@
       <e p="Game.Ships.csproj" t="IncludeRecursive" />
       <e p="Game.Ships.Editor.csproj" t="IncludeRecursive" />
       <e p="Game.Testing.csproj" t="IncludeRecursive" />
+      <e p="Game.Utilities.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
       <e p="Sirenix.OdinInspector.CompatibilityLayer.csproj" t="IncludeRecursive" />

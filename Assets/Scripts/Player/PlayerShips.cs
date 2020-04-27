@@ -7,19 +7,23 @@ using UnityEngine;
 
 public class PlayerShips : Singleton<PlayerShips>
 {
-    public List<PlayerRtsShip> playerControlledShips;
+    [SceneObjectsOnly,HideInEditorMode]
+    public List<PlayerRtsShip> playerControlledShips = new List<PlayerRtsShip>();
     private PlayerShipSelection _selection;
     public IRtsShip ShipSelection => _selection;
-    
+
+
     private void Awake()
     {
-        playerControlledShips.RemoveAll(t => t == null);
-        if (playerControlledShips.IsNullOrEmpty())
-        {
-            Debug.LogError("There are no player controlled ships in the scene! Add the PlayerRtsShip component to ships to make them player controlled");
-            return;
-        }
+        FindPlayerControlledShips();
         _selection = new PlayerShipSelection();
+    }
+
+    private void FindPlayerControlledShips()
+    {
+        playerControlledShips.Clear();
+        playerControlledShips.AddRange(FindObjectsOfType<PlayerRtsShip>());
+        Debug.Assert(playerControlledShips.IsNullOrEmpty() == false, "No Player ships in scene");
     }
 
     private void Update()
@@ -88,14 +92,7 @@ public class PlayerShips : Singleton<PlayerShips>
 
     #region [Editor Helpers]
 
-    [Button(ButtonSizes.Small)]
-    private void FindPlayerControlledShips()
-    {
-        playerControlledShips.Clear();
-        playerControlledShips.AddRange(FindObjectsOfType<PlayerRtsShip>());
-        Debug.Assert(playerControlledShips.IsNullOrEmpty() == false, "No Player ships in scene");
-    }
-
+   
     private void OnValidate()
     {
         playerControlledShips.RemoveAll(t => t == null);

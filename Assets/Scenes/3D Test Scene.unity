@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -648,7 +648,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1790549972}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &263807444
 GameObject:
@@ -1867,6 +1867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9e1ca86b060114cba9c391d81394e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isRoot: 0
   healthTarget: {fileID: 1451622296}
   fillBar: {fileID: 594254226}
   fillRange: 1
@@ -18629,6 +18630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9e1ca86b060114cba9c391d81394e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isRoot: 0
   healthTarget: {fileID: 1817041559}
   fillBar: {fileID: 1499326810}
   fillRange: 1
@@ -30121,9 +30123,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 445603981}
+  - {fileID: 253271231}
   - {fileID: 442871433}
   - {fileID: 129126296}
-  - {fileID: 253271231}
   - {fileID: 4037192511629679409}
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -30268,6 +30270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9e1ca86b060114cba9c391d81394e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isRoot: 0
   healthTarget: {fileID: 921056597}
   fillBar: {fileID: 1810715227}
   fillRange: 1
