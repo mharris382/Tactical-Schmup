@@ -21,17 +21,17 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  maxHP: 100
+  maxHP: 175
   resistances:
   - type: 0
     resistance: 0
   - type: 1
-    resistance: 25
+    resistance: 30
   - type: 2
     resistance: 25
   - type: 3
     resistance: 45
   - type: 4
-    resistance: 45
+    resistance: 40
   - type: 5
     resistance: 0
