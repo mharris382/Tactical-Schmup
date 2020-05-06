@@ -17,6 +17,7 @@ public class WeaponController : MonoBehaviour
     [Range(-1,1)]
     [SerializeField] private float _coneOfFire = .5f;
 
+    private Rigidbody2D _targetRigidbody;
     private Transform _currTarget;
     private bool _firing;
 
@@ -37,6 +38,7 @@ public class WeaponController : MonoBehaviour
     public void FireAtTarget(Transform target)
     {
         _currTarget = target;
+        _targetRigidbody = target.GetComponentInParent<Rigidbody2D>();
     }
 
     
@@ -52,10 +54,17 @@ public class WeaponController : MonoBehaviour
     {
         if (_currTarget == null) return;
 
-
-        var dir = _currTarget.position - transform.position;
-        var dot = Vector2.Dot(CenterAngle, dir.normalized);
-
+        Vector3 aimPosition = transform.position;
+        if (_targetRigidbody != null)
+        {
+            aimPosition = weaponTransform.GetAimPosition(_targetRigidbody);
+        }
+        
+        var desiredAimDirection = aimPosition - transform.position;
+        var desiredAimDot = Vector2.Dot(CenterAngle, desiredAimDirection.normalized);
+        
+        
+        
         if (IsTargetOutsideAngle(_currTarget))
         {
             _firing = false;
@@ -64,8 +73,8 @@ public class WeaponController : MonoBehaviour
         }
         else
         {
-            weaponTransform.AimDirection = dir.normalized;
-            var dist = dir.magnitude;
+            weaponTransform.AimDirection = desiredAimDirection.normalized;
+            var dist = desiredAimDirection.magnitude;
             _firing = dist <= _maxRange;
             weaponTransform.StartFiring();
         }
@@ -82,6 +91,15 @@ public class WeaponController : MonoBehaviour
 
     
     private bool IsTargetOutsideAngle(Transform target)
+    {
+        var targetPos = target.position.With(z: 0);
+        var pos = transform.position.With(z: 0);
+        var dir = targetPos -pos;
+        var dot = Vector2.Dot(CenterAngle.normalized, dir.normalized);
+        return dot < _coneOfFire;
+    }
+    
+    private bool IsPositionOutsideAngle(Transform target)
     {
         var targetPos = target.position.With(z: 0);
         var pos = transform.position.With(z: 0);
@@ -176,7 +194,7 @@ public static class DamageTypeColors
         Color color = Color.white;
         try
         {
-            var tup = typeColors.First(t => t.Item1 == dType);
+            var tup = typeColors.First(t => t.Item1 == dType); 
             color = tup.Item2;
         }
         catch (Exception e)

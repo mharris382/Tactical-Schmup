@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 843cce0731e94e989801bd2681779f9d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - shipTemplate: {instanceID: 0}
+  - uiHealthCanvasPrefab: {fileID: 7989469777245061575, guid: bb34dcb511bddf74e9ad0c287c3a8de8,
+      type: 3}
+  - shieldConfig: {instanceID: 0}
+  - armorConfig: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

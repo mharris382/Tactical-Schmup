@@ -7,28 +7,44 @@ namespace Ships.Defenses
 {
     public class DefenseLayer : MonoBehaviour, IDefenseLayer, IComparable<DefenseLayer>, IHealthLayer
     {
-        [Required,InlineEditor()]
+        [InlineEditor()]
         public DefenseConfig _defenseConfig;
 
         public int layerPriority = 1;
 
         private ObservedValue<float> currentHP;
 
-        public float MaxHP => _defenseConfig.maxHP;
+        public float MaxHP => _defenseConfig != null ?  _defenseConfig.maxHP : -1f;
 
         public float CurrentHP => currentHP.Value;
 
         public event Action<float> OnCurrentHPChanged;
 
+        
         private void Awake()
         {
-            currentHP  = new ObservedValue<float>(_defenseConfig.maxHP);
+            InitDefenseValuesFromConfig();
+        }
+
+
+        public void SetConfig(DefenseConfig config)
+        {
+            _defenseConfig = config;
+            InitDefenseValuesFromConfig();
+        }
+
+        private void InitDefenseValuesFromConfig()
+        {
+            if (_defenseConfig == null)
+                return;
+            currentHP = new ObservedValue<float>(_defenseConfig.maxHP);
             currentHP.OnValueChanged += f => OnCurrentHPChanged?.Invoke(f);
         }
 
         public void TakeDamage(DamageType type, ref float remainingDamage)
         {
-            if (!enabled )
+            
+            if (!enabled || _defenseConfig == null)
             {
                 return;
             }

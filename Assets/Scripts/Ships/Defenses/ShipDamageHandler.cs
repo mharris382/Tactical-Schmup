@@ -15,6 +15,8 @@ namespace Ships.Defenses
             defenseLayers.Clear();
             defenseLayers.AddRange(GetComponentsInChildren<DefenseLayer>());
         }
+        
+        
         public List<DefenseLayer> defenseLayers;
         public float maxHullHP = 100;
 

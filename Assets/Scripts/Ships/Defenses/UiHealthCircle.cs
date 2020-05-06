@@ -6,13 +6,15 @@ using UnityEngine.UI;
 public class UiHealthCircle : MonoBehaviour
 {
     public bool isRoot = false;
-    [ValidateInput("valTarget"), HideIf("isRoot")]
+    [HideIf("isRoot")]
     public GameObject healthTarget;
 
     [Required] public Image fillBar;
     [Range(0, 1)]
     public float fillRange = 0.5f;
 
+    public HealthTarget target = HealthTarget.Hull;
+    
     #region [Editor Helpers]
 
     bool valTarget(GameObject go, ref string msg)
@@ -53,5 +55,14 @@ public class UiHealthCircle : MonoBehaviour
         float p = currentHealth / _health.MaxHP;
         p = Mathf.Lerp(0, fillRange, p);
         fillBar.fillAmount = p;
+    }
+
+
+    public enum HealthTarget
+    {
+        None,
+        Hull,
+        Shield,
+        Armor
     }
 }

@@ -157,6 +157,7 @@ GameObject:
   - component: {fileID: 7989469776452924390}
   - component: {fileID: 7989469776452924388}
   - component: {fileID: 7989469776452924389}
+  - component: {fileID: 1784846592611328736}
   m_Layer: 0
   m_Name: Shield Fill
   m_TagString: Untagged
@@ -219,6 +220,23 @@ MonoBehaviour:
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1784846592611328736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7989469776452924391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a9e1ca86b060114cba9c391d81394e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRoot: 0
+  healthTarget: {fileID: 0}
+  fillBar: {fileID: 7989469776452924389}
+  fillRange: 1
+  target: 2
 --- !u!1 &7989469777245061579
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,6 +365,7 @@ GameObject:
   - component: {fileID: 7989469777948195501}
   - component: {fileID: 7989469777948195499}
   - component: {fileID: 7989469777948195500}
+  - component: {fileID: 5124238980562560812}
   m_Layer: 0
   m_Name: Hull Fill
   m_TagString: Untagged
@@ -409,6 +428,23 @@ MonoBehaviour:
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5124238980562560812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7989469777948195502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a9e1ca86b060114cba9c391d81394e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRoot: 0
+  healthTarget: {fileID: 0}
+  fillBar: {fileID: 7989469777948195500}
+  fillRange: 1
+  target: 1
 --- !u!1 &7989469778178550119
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,6 +456,7 @@ GameObject:
   - component: {fileID: 7989469778178550118}
   - component: {fileID: 7989469778178550116}
   - component: {fileID: 7989469778178550117}
+  - component: {fileID: 5666788149999424287}
   m_Layer: 0
   m_Name: Armor Fill
   m_TagString: Untagged
@@ -482,6 +519,23 @@ MonoBehaviour:
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5666788149999424287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7989469778178550119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a9e1ca86b060114cba9c391d81394e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRoot: 0
+  healthTarget: {fileID: 0}
+  fillBar: {fileID: 7989469778178550117}
+  fillRange: 1
+  target: 3
 --- !u!1 &7989469778402222617
 GameObject:
   m_ObjectHideFlags: 0

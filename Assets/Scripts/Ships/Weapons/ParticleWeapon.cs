@@ -17,6 +17,9 @@ public class ParticleWeapon : MonoBehaviour
 
     public DamageType DamageType => _damageType;
 
+
+
+
     private void OnParticleCollision(GameObject other)
     {
        var damageable = other.GetComponent<IDamageable>();
@@ -49,5 +52,10 @@ public class ParticleWeapon : MonoBehaviour
     public void StopFiring()
     {
         _particleSystem.Stop();
+    }
+
+    public Vector3 GetAimPosition(Rigidbody2D targetRigidbody)
+    {
+        throw new NotImplementedException();
     }
 }
