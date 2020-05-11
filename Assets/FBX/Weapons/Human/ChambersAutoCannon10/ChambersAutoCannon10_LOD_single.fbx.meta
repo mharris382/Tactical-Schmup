@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 61a47010611fce5479f3cb3af85a7aa7
+guid: 254b22eeb16638a4490f5fe2c693a7e5
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Wastrels
-    second: {fileID: 2100000, guid: 85195a6a3b5d661478f0ccec42748249, type: 2}
+      name: ChambersAutocannon10
+    second: {fileID: 2100000, guid: a5d012d4afdec6440a9981f348774717, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

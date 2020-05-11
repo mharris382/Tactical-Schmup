@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 61a47010611fce5479f3cb3af85a7aa7
+guid: 79902468f029f194fad71f51ec7349f1
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Wastrels
-    second: {fileID: 2100000, guid: 85195a6a3b5d661478f0ccec42748249, type: 2}
+      name: Aurous
+    second: {fileID: 2100000, guid: e8285979ec0c90740bd80d93aa62c079, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
