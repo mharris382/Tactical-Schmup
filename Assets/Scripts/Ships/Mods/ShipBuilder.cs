@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Ships.Defenses;
+using Ships.Movement;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -12,7 +13,7 @@ namespace Ships.Mods
     {
         
         [TitleGroup("Ship Prefab"), HideLabel, PreviewField(100, ObjectFieldAlignment.Left)]
-        public ShipModManager shipTemplate;
+        public ShipManager shipTemplate;
 
         
         [Required,PropertyOrder(-10), AssetsOnly,ValidateInput("validateUi")]
@@ -26,7 +27,8 @@ namespace Ships.Mods
         [GUIColor("armorColor")]  public DefenseConfig armorConfig;
 
 
-
+        public ShipMovement movement;
+        public ShipRotation rotation;
 
         #region [EDITOR HELPERS]
 
@@ -60,18 +62,21 @@ namespace Ships.Mods
         }
         
 
-        public ShipModManager BuildShip(Vector3 position, Quaternion rotation)
+        public ShipManager BuildShip(Vector3 position, Quaternion rotation)
         {
             var shipInstance = Instantiate(shipTemplate, position, rotation);
             shipInstance.isTemplate = false;
             
             InjectDefenses(shipInstance);
-    
 
+            var shipController =shipInstance.gameObject.AddComponent<RtsShipController>();
+            shipController.ShipMovementController = movement;
+            shipController.ShipRotationHandler = this.rotation;
+            
             return shipInstance;
         }
 
-        private void InjectDefenses(ShipModManager shipInstance)
+        private void InjectDefenses(ShipManager shipInstance)
         {
             //Setup Health UI
             var uiParent = shipInstance.hudParent;
@@ -111,6 +116,7 @@ namespace Ships.Mods
             var damageHandler = shipInstance.gameObject.AddComponent<ShipDamageHandler>();
             damageHandler.maxHullHP = this.hullHP;
             damageHandler.defenseLayers = defenseLayers;
+            uiHull.healthTarget = damageHandler.gameObject;
         }
         
         public DefenseLayer CreateDefenseLayerInstance(GameObject shipInstance, DefenseConfig config)

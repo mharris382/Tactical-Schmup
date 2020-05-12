@@ -10048,6 +10048,7 @@ MonoBehaviour:
   healthTarget: {fileID: 2255234605816478175}
   fillBar: {fileID: 7307849028421301587}
   fillRange: 1
+  target: 1
 --- !u!1 &7307849029212653437
 GameObject:
   m_ObjectHideFlags: 0
@@ -10269,6 +10270,7 @@ MonoBehaviour:
   healthTarget: {fileID: 2449764872175906097}
   fillBar: {fileID: 7307849029849463834}
   fillRange: 1
+  target: 1
 --- !u!1 &7307849030145617873
 GameObject:
   m_ObjectHideFlags: 0
@@ -10359,6 +10361,7 @@ MonoBehaviour:
   healthTarget: {fileID: 2255234605300231449}
   fillBar: {fileID: 7307849030145617875}
   fillRange: 1
+  target: 1
 --- !u!1 &7307849030370600111
 GameObject:
   m_ObjectHideFlags: 0
@@ -10713,11 +10716,6 @@ PrefabInstance:
       propertyPath: SubModule.enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6937259773466849994, guid: 979b89a7d94ae024cbf6782a0d8cc2ac,
-        type: 3}
-      propertyPath: SubModule.subEmitters.Array.data[0].emitter
-      value: 
-      objectReference: {fileID: 201441357523042503}
     - target: {fileID: 6937259773466849994, guid: 979b89a7d94ae024cbf6782a0d8cc2ac,
         type: 3}
       propertyPath: ShapeModule.m_Position.z

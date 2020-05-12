@@ -25,6 +25,8 @@ namespace Ships.Movement
 
         private Rigidbody2D _rigidbody;
 
+        public Rigidbody2D Rigidbody => _rigidbody;
+
         public IShipMovement ShipMovementController
         {
             set { _movementHandler = value; }
@@ -53,11 +55,12 @@ namespace Ships.Movement
             ShipMovementController.HandleMovement(this);
         }
 
-
-        #region [Default Ship Controllers]
-
+        
+    }
+    
+    
         [Serializable]
-        private class ShipMovement : IShipMovement
+        public class ShipMovement : IShipMovement
         {
             [SerializeField] private float _moveSpeed = 5;
             [MinValue(0), SerializeField] private float _arrivalDistance = 10;
@@ -69,7 +72,7 @@ namespace Ships.Movement
             public void HandleMovement(RtsShipController ship)
             {
                 var transform = ship.transform;
-                var rigidbody2D = ship._rigidbody;
+                var rigidbody2D = ship.Rigidbody;
 
 
                 var dirToTarget =  (Vector2) ship.MoveTarget -rigidbody2D.position;
@@ -117,7 +120,7 @@ namespace Ships.Movement
 
         
         [Serializable]
-        private class ShipRotation : IShipRotation
+        public class ShipRotation : IShipRotation
         {
             [Range(0, 180)] public float rotationSpeed = 15;
 
@@ -133,11 +136,4 @@ namespace Ships.Movement
                     Time.fixedDeltaTime * rotationSpeed);
             }
         }
-
-        #endregion
-        
-        
-        
-        
-    }
 }

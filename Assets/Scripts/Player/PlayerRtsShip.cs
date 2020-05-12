@@ -9,12 +9,21 @@ public class PlayerRtsShip : MonoBehaviour, IRtsShip
     [Required]
     [SerializeField] private GameObject selection = null;
 
+    
+    [FoldoutGroup("Selection Events")]
 
-    [FoldoutGroup("Selection Events")]public UnityEvent onShipSelected;
+
+    public UnityEvent onShipSelected;
     [FoldoutGroup("Selection Events")]public UnityEvent onShipDeselected;
 
     private IRtsShip _rtsShip;
     private  bool _isSelected;
+
+    public GameObject Selection
+    {
+        get => selection;
+        set => selection = value;
+    }
 
     public Vector3 LookTarget
     {

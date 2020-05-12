@@ -56,6 +56,7 @@ public class ParticleWeapon : MonoBehaviour
 
     public Vector3 GetAimPosition(Rigidbody2D targetRigidbody)
     {
+        return targetRigidbody.position;
         throw new NotImplementedException();
     }
 }

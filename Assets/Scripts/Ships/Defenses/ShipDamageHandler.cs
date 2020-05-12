@@ -17,7 +17,7 @@ namespace Ships.Defenses
         }
         
         
-        public List<DefenseLayer> defenseLayers;
+        public List<DefenseLayer> defenseLayers = new List<DefenseLayer>();
         public float maxHullHP = 100;
 
 
@@ -32,6 +32,7 @@ namespace Ships.Defenses
         
         private void Awake()
         {
+            defenseLayers = new List<DefenseLayer>();
             if (defenseLayers.FindIndex(t => t == null) == -1)
             {
                 defenseLayers.Clear();

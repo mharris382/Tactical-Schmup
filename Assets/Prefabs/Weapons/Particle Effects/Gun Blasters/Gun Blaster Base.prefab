@@ -3759,7 +3759,7 @@ ParticleSystem:
     enabled: 0
     subEmitters:
     - serializedVersion: 3
-      emitter: {fileID: 0}
+      emitter: {fileID: 6601403706549410864}
       type: 1
       properties: 4
       emitProbability: 1
@@ -4858,6 +4858,12 @@ PrefabInstance:
 --- !u!4 &6601403706549410870 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5755687615613808268, guid: 41d687faf56ff7a4bad9ee59554fc698,
+    type: 3}
+  m_PrefabInstance: {fileID: 1476242614861017786}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &6601403706549410864 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5755687615613808266, guid: 41d687faf56ff7a4bad9ee59554fc698,
     type: 3}
   m_PrefabInstance: {fileID: 1476242614861017786}
   m_PrefabAsset: {fileID: 0}
