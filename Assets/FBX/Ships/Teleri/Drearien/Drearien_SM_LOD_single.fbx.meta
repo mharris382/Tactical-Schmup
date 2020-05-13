@@ -3,7 +3,12 @@ guid: 0928e6e54504a054fad7f199919e635c
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DrearianMat
+    second: {fileID: 2100000, guid: c82f06bb42d8ea348854dabdeee93853, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
