@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: ChambersAutoCannon10LP
-    second: {fileID: 2100000, guid: 94bb2394d474b6549af151e1b6d7097b, type: 2}
+    second: {fileID: 2100000, guid: a5d012d4afdec6440a9981f348774717, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
