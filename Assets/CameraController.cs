@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -90,20 +90,26 @@ public class CameraController : MonoBehaviour
 
     void Zoom()
     {
-        float scrollInput = Input.GetAxis("Mouse ScrollWheel");
-        float dist = Vector3.Distance(moveTransform.position, zoomTransform.position);
-        if (dist < minZoomDist && scrollInput > 0.0f)
-            return;
-        else if (dist >= maxZoomDist && scrollInput < 0.0f)
-            return;
-
-        _zoomTargetPos += zoomTransform.forward * (scrollInput * zoomSpeed);
-        zoomTransform.localPosition = _zoomCurrPos = Vector3.SmoothDamp(_zoomCurrPos, _zoomTargetPos, ref _currZoomVelocity, zoomSmoothing);
+        ZoomInput();
         
-        
+         _zoomCurrPos = Vector3.SmoothDamp(_zoomCurrPos, _zoomTargetPos, ref _currZoomVelocity, zoomSmoothing);
+         _zoomCurrPos.x = 0;
+         zoomTransform.localPosition = _zoomCurrPos;
     }
 
-     IEnumerator CheckForRotationInput()
+    private void ZoomInput()
+    {
+        float scrollInput = Input.GetAxis("Mouse ScrollWheel");
+        float dist =  Vector3.Distance(moveTransform.position, zoomTransform.position);
+        if (dist < minZoomDist && scrollInput > 0.0f)
+            return ;
+        else if (dist >= maxZoomDist && scrollInput < 0.0f)
+            return ;
+        _zoomTargetPos += zoomTransform.forward * (scrollInput * zoomSpeed);
+
+    }
+
+    IEnumerator CheckForRotationInput()
      {
          while (true)
          {
